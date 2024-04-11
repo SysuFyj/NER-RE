@@ -1,0 +1,685 @@
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+[2024-01-14 21:40:09,124] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+2024-01-14 21:40:09.609689: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-01-14 21:40:10.557658: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-01-14 21:40:10.557774: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-01-14 21:40:10.557786: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-01-14 21:40:11 INFO     utils[line:145]: >> Note: detected 88 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2024-01-14 21:40:11 INFO     utils[line:148]: >> Note: NumExpr detected 88 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-01-14 21:40:11 INFO     utils[line:160]: >> NumExpr defaulting to 8 threads.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:10,  1.73s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:03<00:08,  1.71s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:05<00:06,  1.70s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:06<00:04,  1.64s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:08<00:03,  1.64s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:09<00:01,  1.64s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.42s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.56s/it]
+Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/xf2022/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2024-01-14 21:40:24 WARNING  base[line:85]: >> Symbol nvrtcGetCUBIN not found in /usr/local/cuda/lib64/libnvrtc.so
+2024-01-14 21:40:24 WARNING  base[line:85]: >> Symbol nvrtcGetCUBINSize not found in /usr/local/cuda/lib64/libnvrtc.so
+2024-01-14 21:40:33 INFO     predict[line:54]: >> 0
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /data2/fyj2023/project/ChatGLM2-6B/model_predict/predict.py:59 in <module>   │
+│                                                                              │
+│   56 │                                                                       │
+│   57 │      # response, history = model.chat(tokenizer, data['input'], histo │
+│   58 │   │   response, history = model.chat(tokenizer,                       │
+│ ❱ 59 │   │   │   │   │   │   │   │      prompt,                              │
+│   60 │   │   │   │   │   │   │   │      history=history,                     │
+│   61 │   │   │   │   │   │   │   │      max_length=2048,                     │
+│   62 │   │   │   │   │   │   │   │      top_p= 0.7,                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+NameError: name 'prompt' is not defined
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+[2024-01-14 21:42:10,904] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+2024-01-14 21:42:11.273539: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-01-14 21:42:12.184017: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-01-14 21:42:12.184147: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-01-14 21:42:12.184161: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-01-14 21:42:12 INFO     utils[line:145]: >> Note: detected 88 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2024-01-14 21:42:12 INFO     utils[line:148]: >> Note: NumExpr detected 88 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-01-14 21:42:12 INFO     utils[line:160]: >> NumExpr defaulting to 8 threads.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:09,  1.62s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:03<00:08,  1.64s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:05<00:06,  1.70s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:06<00:05,  1.67s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:08<00:03,  1.71s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:10<00:01,  1.72s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:11<00:00,  1.51s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:11<00:00,  1.61s/it]
+Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/xf2022/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2024-01-14 21:42:26 WARNING  base[line:85]: >> Symbol nvrtcGetCUBIN not found in /usr/local/cuda/lib64/libnvrtc.so
+2024-01-14 21:42:26 WARNING  base[line:85]: >> Symbol nvrtcGetCUBINSize not found in /usr/local/cuda/lib64/libnvrtc.so
+2024-01-14 21:42:35 INFO     predict[line:54]: >> 0
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /data2/fyj2023/project/ChatGLM2-6B/model_predict/predict.py:57 in <module>   │
+│                                                                              │
+│   54 │   │   logging.info(i)                                                 │
+│   55 │   │                                                                   │
+│   56 │   │                                                                   │
+│ ❱ 57 │   │   response, history = model.chat(tokenizer, data['input'], histor │
+│   58 │   │   # response, history = model.chat(tokenizer,                     │
+│   59 │   │   #                            prompt,                            │
+│   60 │   │   #                            history=history,                   │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ utils/_contextlib.py:115 in decorate_context                                 │
+│                                                                              │
+│   112 │   @functools.wraps(func)                                             │
+│   113 │   def decorate_context(*args, **kwargs):                             │
+│   114 │   │   with ctx_factory():                                            │
+│ ❱ 115 │   │   │   return func(*args, **kwargs)                               │
+│   116 │                                                                      │
+│   117 │   return decorate_context                                            │
+│   118                                                                        │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:1029 in chat                                           │
+│                                                                              │
+│   1026 │   │   gen_kwargs = {"max_length": max_length, "num_beams": num_beam │
+│   1027 │   │   │   │   │     "temperature": temperature, "logits_processor": │
+│   1028 │   │   inputs = self.build_inputs(tokenizer, query, history=history) │
+│ ❱ 1029 │   │   outputs = self.generate(**inputs, **gen_kwargs)               │
+│   1030 │   │   outputs = outputs.tolist()[0][len(inputs["input_ids"][0]):]   │
+│   1031 │   │   response = tokenizer.decode(outputs)                          │
+│   1032 │   │   response = self.process_response(response)                    │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ utils/_contextlib.py:115 in decorate_context                                 │
+│                                                                              │
+│   112 │   @functools.wraps(func)                                             │
+│   113 │   def decorate_context(*args, **kwargs):                             │
+│   114 │   │   with ctx_factory():                                            │
+│ ❱ 115 │   │   │   return func(*args, **kwargs)                               │
+│   116 │                                                                      │
+│   117 │   return decorate_context                                            │
+│   118                                                                        │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transf │
+│ ormers/generation/utils.py:1572 in generate                                  │
+│                                                                              │
+│   1569 │   │   │   )                                                         │
+│   1570 │   │   │                                                             │
+│   1571 │   │   │   # 13. run sample                                          │
+│ ❱ 1572 │   │   │   return self.sample(                                       │
+│   1573 │   │   │   │   input_ids,                                            │
+│   1574 │   │   │   │   logits_processor=logits_processor,                    │
+│   1575 │   │   │   │   logits_warper=logits_warper,                          │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transf │
+│ ormers/generation/utils.py:2619 in sample                                    │
+│                                                                              │
+│   2616 │   │   │   model_inputs = self.prepare_inputs_for_generation(input_i │
+│   2617 │   │   │                                                             │
+│   2618 │   │   │   # forward pass to get next token                          │
+│ ❱ 2619 │   │   │   outputs = self(                                           │
+│   2620 │   │   │   │   **model_inputs,                                       │
+│   2621 │   │   │   │   return_dict=True,                                     │
+│   2622 │   │   │   │   output_attentions=output_attentions,                  │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:933 in forward                                         │
+│                                                                              │
+│    930 │   │   use_cache = use_cache if use_cache is not None else self.conf │
+│    931 │   │   return_dict = return_dict if return_dict is not None else sel │
+│    932 │   │                                                                 │
+│ ❱  933 │   │   transformer_outputs = self.transformer(                       │
+│    934 │   │   │   input_ids=input_ids,                                      │
+│    935 │   │   │   position_ids=position_ids,                                │
+│    936 │   │   │   attention_mask=attention_mask,                            │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:829 in forward                                         │
+│                                                                              │
+│    826 │   │   rotary_pos_emb = rotary_pos_emb.transpose(0, 1).contiguous()  │
+│    827 │   │                                                                 │
+│    828 │   │   # Run encoder.                                                │
+│ ❱  829 │   │   hidden_states, presents, all_hidden_states, all_self_attentio │
+│    830 │   │   │   inputs_embeds, full_attention_mask, rotary_pos_emb=rotary │
+│    831 │   │   │   kv_caches=past_key_values, use_cache=use_cache, output_hi │
+│    832 │   │   )                                                             │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:639 in forward                                         │
+│                                                                              │
+│    636 │   │   │   │   │   use_cache                                         │
+│    637 │   │   │   │   )                                                     │
+│    638 │   │   │   else:                                                     │
+│ ❱  639 │   │   │   │   layer_ret = layer(                                    │
+│    640 │   │   │   │   │   hidden_states,                                    │
+│    641 │   │   │   │   │   attention_mask,                                   │
+│    642 │   │   │   │   │   rotary_pos_emb,                                   │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:543 in forward                                         │
+│                                                                              │
+│    540 │   │   # Layer norm at the beginning of the transformer layer.       │
+│    541 │   │   layernorm_output = self.input_layernorm(hidden_states)        │
+│    542 │   │   # Self attention.                                             │
+│ ❱  543 │   │   attention_output, kv_cache = self.self_attention(             │
+│    544 │   │   │   layernorm_output,                                         │
+│    545 │   │   │   attention_mask,                                           │
+│    546 │   │   │   rotary_pos_emb,                                           │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:440 in forward                                         │
+│                                                                              │
+│    437 │   │   # core attention computation                                  │
+│    438 │   │   # ==================================                          │
+│    439 │   │                                                                 │
+│ ❱  440 │   │   context_layer = self.core_attention(query_layer, key_layer, v │
+│    441 │   │                                                                 │
+│    442 │   │   # =================                                           │
+│    443 │   │   # Output. [sq, b, h]                                          │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:230 in forward                                         │
+│                                                                              │
+│    227 │   │   │   else:                                                     │
+│    228 │   │   │   │   if attention_mask is not None:                        │
+│    229 │   │   │   │   │   attention_mask = ~attention_mask                  │
+│ ❱  230 │   │   │   │   context_layer = torch.nn.functional.scaled_dot_produc │
+│    231 │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │ │
+│    232 │   │   │   context_layer = context_layer.permute(2, 0, 1, 3)         │
+│    233 │   │   │   new_context_layer_shape = context_layer.size()[:-2] + (se │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OutOfMemoryError: CUDA out of memory. Tried to allocate 12.73 GiB (GPU 0; 23.70 
+GiB total capacity; 18.02 GiB already allocated; 3.32 GiB free; 19.01 GiB 
+reserved in total by PyTorch) If reserved memory is >> allocated memory try 
+setting max_split_size_mb to avoid fragmentation.  See documentation for Memory 
+Management and PYTORCH_CUDA_ALLOC_CONF
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+[2024-01-14 21:45:38,897] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+2024-01-14 21:45:39.305842: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-01-14 21:45:40.279931: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-01-14 21:45:40.280091: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-01-14 21:45:40.280104: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-01-14 21:45:40 INFO     utils[line:145]: >> Note: detected 88 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2024-01-14 21:45:40 INFO     utils[line:148]: >> Note: NumExpr detected 88 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-01-14 21:45:40 INFO     utils[line:160]: >> NumExpr defaulting to 8 threads.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:10,  1.73s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:03<00:08,  1.72s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:05<00:06,  1.70s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:06<00:04,  1.63s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:08<00:03,  1.63s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:09<00:01,  1.64s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.42s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.56s/it]
+Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/xf2022/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2024-01-14 21:45:54 WARNING  base[line:85]: >> Symbol nvrtcGetCUBIN not found in /usr/local/cuda/lib64/libnvrtc.so
+2024-01-14 21:45:54 WARNING  base[line:85]: >> Symbol nvrtcGetCUBINSize not found in /usr/local/cuda/lib64/libnvrtc.so
+2024-01-14 21:46:04 INFO     predict[line:54]: >> 0
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /data2/fyj2023/project/ChatGLM2-6B/model_predict/predict.py:57 in <module>   │
+│                                                                              │
+│   54 │   │   logging.info(i)                                                 │
+│   55 │   │                                                                   │
+│   56 │   │                                                                   │
+│ ❱ 57 │   │   response, history = model.chat(tokenizer, data['input'], histor │
+│   58 │   │   # response, history = model.chat(tokenizer,                     │
+│   59 │   │   #                            prompt,                            │
+│   60 │   │   #                            history=history,                   │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ utils/_contextlib.py:115 in decorate_context                                 │
+│                                                                              │
+│   112 │   @functools.wraps(func)                                             │
+│   113 │   def decorate_context(*args, **kwargs):                             │
+│   114 │   │   with ctx_factory():                                            │
+│ ❱ 115 │   │   │   return func(*args, **kwargs)                               │
+│   116 │                                                                      │
+│   117 │   return decorate_context                                            │
+│   118                                                                        │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:1029 in chat                                           │
+│                                                                              │
+│   1026 │   │   gen_kwargs = {"max_length": max_length, "num_beams": num_beam │
+│   1027 │   │   │   │   │     "temperature": temperature, "logits_processor": │
+│   1028 │   │   inputs = self.build_inputs(tokenizer, query, history=history) │
+│ ❱ 1029 │   │   outputs = self.generate(**inputs, **gen_kwargs)               │
+│   1030 │   │   outputs = outputs.tolist()[0][len(inputs["input_ids"][0]):]   │
+│   1031 │   │   response = tokenizer.decode(outputs)                          │
+│   1032 │   │   response = self.process_response(response)                    │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ utils/_contextlib.py:115 in decorate_context                                 │
+│                                                                              │
+│   112 │   @functools.wraps(func)                                             │
+│   113 │   def decorate_context(*args, **kwargs):                             │
+│   114 │   │   with ctx_factory():                                            │
+│ ❱ 115 │   │   │   return func(*args, **kwargs)                               │
+│   116 │                                                                      │
+│   117 │   return decorate_context                                            │
+│   118                                                                        │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transf │
+│ ormers/generation/utils.py:1572 in generate                                  │
+│                                                                              │
+│   1569 │   │   │   )                                                         │
+│   1570 │   │   │                                                             │
+│   1571 │   │   │   # 13. run sample                                          │
+│ ❱ 1572 │   │   │   return self.sample(                                       │
+│   1573 │   │   │   │   input_ids,                                            │
+│   1574 │   │   │   │   logits_processor=logits_processor,                    │
+│   1575 │   │   │   │   logits_warper=logits_warper,                          │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transf │
+│ ormers/generation/utils.py:2619 in sample                                    │
+│                                                                              │
+│   2616 │   │   │   model_inputs = self.prepare_inputs_for_generation(input_i │
+│   2617 │   │   │                                                             │
+│   2618 │   │   │   # forward pass to get next token                          │
+│ ❱ 2619 │   │   │   outputs = self(                                           │
+│   2620 │   │   │   │   **model_inputs,                                       │
+│   2621 │   │   │   │   return_dict=True,                                     │
+│   2622 │   │   │   │   output_attentions=output_attentions,                  │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:933 in forward                                         │
+│                                                                              │
+│    930 │   │   use_cache = use_cache if use_cache is not None else self.conf │
+│    931 │   │   return_dict = return_dict if return_dict is not None else sel │
+│    932 │   │                                                                 │
+│ ❱  933 │   │   transformer_outputs = self.transformer(                       │
+│    934 │   │   │   input_ids=input_ids,                                      │
+│    935 │   │   │   position_ids=position_ids,                                │
+│    936 │   │   │   attention_mask=attention_mask,                            │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:829 in forward                                         │
+│                                                                              │
+│    826 │   │   rotary_pos_emb = rotary_pos_emb.transpose(0, 1).contiguous()  │
+│    827 │   │                                                                 │
+│    828 │   │   # Run encoder.                                                │
+│ ❱  829 │   │   hidden_states, presents, all_hidden_states, all_self_attentio │
+│    830 │   │   │   inputs_embeds, full_attention_mask, rotary_pos_emb=rotary │
+│    831 │   │   │   kv_caches=past_key_values, use_cache=use_cache, output_hi │
+│    832 │   │   )                                                             │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:639 in forward                                         │
+│                                                                              │
+│    636 │   │   │   │   │   use_cache                                         │
+│    637 │   │   │   │   )                                                     │
+│    638 │   │   │   else:                                                     │
+│ ❱  639 │   │   │   │   layer_ret = layer(                                    │
+│    640 │   │   │   │   │   hidden_states,                                    │
+│    641 │   │   │   │   │   attention_mask,                                   │
+│    642 │   │   │   │   │   rotary_pos_emb,                                   │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:543 in forward                                         │
+│                                                                              │
+│    540 │   │   # Layer norm at the beginning of the transformer layer.       │
+│    541 │   │   layernorm_output = self.input_layernorm(hidden_states)        │
+│    542 │   │   # Self attention.                                             │
+│ ❱  543 │   │   attention_output, kv_cache = self.self_attention(             │
+│    544 │   │   │   layernorm_output,                                         │
+│    545 │   │   │   attention_mask,                                           │
+│    546 │   │   │   rotary_pos_emb,                                           │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:440 in forward                                         │
+│                                                                              │
+│    437 │   │   # core attention computation                                  │
+│    438 │   │   # ==================================                          │
+│    439 │   │                                                                 │
+│ ❱  440 │   │   context_layer = self.core_attention(query_layer, key_layer, v │
+│    441 │   │                                                                 │
+│    442 │   │   # =================                                           │
+│    443 │   │   # Output. [sq, b, h]                                          │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:230 in forward                                         │
+│                                                                              │
+│    227 │   │   │   else:                                                     │
+│    228 │   │   │   │   if attention_mask is not None:                        │
+│    229 │   │   │   │   │   attention_mask = ~attention_mask                  │
+│ ❱  230 │   │   │   │   context_layer = torch.nn.functional.scaled_dot_produc │
+│    231 │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │ │
+│    232 │   │   │   context_layer = context_layer.permute(2, 0, 1, 3)         │
+│    233 │   │   │   new_context_layer_shape = context_layer.size()[:-2] + (se │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OutOfMemoryError: CUDA out of memory. Tried to allocate 12.73 GiB (GPU 0; 23.70 
+GiB total capacity; 18.02 GiB already allocated; 3.32 GiB free; 19.01 GiB 
+reserved in total by PyTorch) If reserved memory is >> allocated memory try 
+setting max_split_size_mb to avoid fragmentation.  See documentation for Memory 
+Management and PYTORCH_CUDA_ALLOC_CONF
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+[2024-01-14 21:48:12,814] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+2024-01-14 21:48:13.223452: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-01-14 21:48:14.202278: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-01-14 21:48:14.202408: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-01-14 21:48:14.202421: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-01-14 21:48:14 INFO     utils[line:145]: >> Note: detected 88 virtual cores but NumExpr set to maximum of 64, check "NUMEXPR_MAX_THREADS" environment variable.
+2024-01-14 21:48:14 INFO     utils[line:148]: >> Note: NumExpr detected 88 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-01-14 21:48:14 INFO     utils[line:160]: >> NumExpr defaulting to 8 threads.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:09,  1.65s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:03<00:08,  1.66s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:04<00:06,  1.66s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:06<00:04,  1.62s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:08<00:03,  1.65s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:09<00:01,  1.66s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.44s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.56s/it]
+Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/xf2022/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2024-01-14 21:48:30 WARNING  base[line:85]: >> Symbol nvrtcGetCUBIN not found in /usr/local/cuda/lib64/libnvrtc.so
+2024-01-14 21:48:30 WARNING  base[line:85]: >> Symbol nvrtcGetCUBINSize not found in /usr/local/cuda/lib64/libnvrtc.so
+2024-01-14 21:48:41 INFO     predict[line:54]: >> 0
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /data2/fyj2023/project/ChatGLM2-6B/model_predict/predict.py:57 in <module>   │
+│                                                                              │
+│   54 │   │   logging.info(i)                                                 │
+│   55 │   │                                                                   │
+│   56 │   │                                                                   │
+│ ❱ 57 │   │   response, history = model.chat(tokenizer, data['input'], histor │
+│   58 │   │   # response, history = model.chat(tokenizer,                     │
+│   59 │   │   #                            prompt,                            │
+│   60 │   │   #                            history=history,                   │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ utils/_contextlib.py:115 in decorate_context                                 │
+│                                                                              │
+│   112 │   @functools.wraps(func)                                             │
+│   113 │   def decorate_context(*args, **kwargs):                             │
+│   114 │   │   with ctx_factory():                                            │
+│ ❱ 115 │   │   │   return func(*args, **kwargs)                               │
+│   116 │                                                                      │
+│   117 │   return decorate_context                                            │
+│   118                                                                        │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:1029 in chat                                           │
+│                                                                              │
+│   1026 │   │   gen_kwargs = {"max_length": max_length, "num_beams": num_beam │
+│   1027 │   │   │   │   │     "temperature": temperature, "logits_processor": │
+│   1028 │   │   inputs = self.build_inputs(tokenizer, query, history=history) │
+│ ❱ 1029 │   │   outputs = self.generate(**inputs, **gen_kwargs)               │
+│   1030 │   │   outputs = outputs.tolist()[0][len(inputs["input_ids"][0]):]   │
+│   1031 │   │   response = tokenizer.decode(outputs)                          │
+│   1032 │   │   response = self.process_response(response)                    │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ utils/_contextlib.py:115 in decorate_context                                 │
+│                                                                              │
+│   112 │   @functools.wraps(func)                                             │
+│   113 │   def decorate_context(*args, **kwargs):                             │
+│   114 │   │   with ctx_factory():                                            │
+│ ❱ 115 │   │   │   return func(*args, **kwargs)                               │
+│   116 │                                                                      │
+│   117 │   return decorate_context                                            │
+│   118                                                                        │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transf │
+│ ormers/generation/utils.py:1572 in generate                                  │
+│                                                                              │
+│   1569 │   │   │   )                                                         │
+│   1570 │   │   │                                                             │
+│   1571 │   │   │   # 13. run sample                                          │
+│ ❱ 1572 │   │   │   return self.sample(                                       │
+│   1573 │   │   │   │   input_ids,                                            │
+│   1574 │   │   │   │   logits_processor=logits_processor,                    │
+│   1575 │   │   │   │   logits_warper=logits_warper,                          │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transf │
+│ ormers/generation/utils.py:2619 in sample                                    │
+│                                                                              │
+│   2616 │   │   │   model_inputs = self.prepare_inputs_for_generation(input_i │
+│   2617 │   │   │                                                             │
+│   2618 │   │   │   # forward pass to get next token                          │
+│ ❱ 2619 │   │   │   outputs = self(                                           │
+│   2620 │   │   │   │   **model_inputs,                                       │
+│   2621 │   │   │   │   return_dict=True,                                     │
+│   2622 │   │   │   │   output_attentions=output_attentions,                  │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:933 in forward                                         │
+│                                                                              │
+│    930 │   │   use_cache = use_cache if use_cache is not None else self.conf │
+│    931 │   │   return_dict = return_dict if return_dict is not None else sel │
+│    932 │   │                                                                 │
+│ ❱  933 │   │   transformer_outputs = self.transformer(                       │
+│    934 │   │   │   input_ids=input_ids,                                      │
+│    935 │   │   │   position_ids=position_ids,                                │
+│    936 │   │   │   attention_mask=attention_mask,                            │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:829 in forward                                         │
+│                                                                              │
+│    826 │   │   rotary_pos_emb = rotary_pos_emb.transpose(0, 1).contiguous()  │
+│    827 │   │                                                                 │
+│    828 │   │   # Run encoder.                                                │
+│ ❱  829 │   │   hidden_states, presents, all_hidden_states, all_self_attentio │
+│    830 │   │   │   inputs_embeds, full_attention_mask, rotary_pos_emb=rotary │
+│    831 │   │   │   kv_caches=past_key_values, use_cache=use_cache, output_hi │
+│    832 │   │   )                                                             │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:639 in forward                                         │
+│                                                                              │
+│    636 │   │   │   │   │   use_cache                                         │
+│    637 │   │   │   │   )                                                     │
+│    638 │   │   │   else:                                                     │
+│ ❱  639 │   │   │   │   layer_ret = layer(                                    │
+│    640 │   │   │   │   │   hidden_states,                                    │
+│    641 │   │   │   │   │   attention_mask,                                   │
+│    642 │   │   │   │   │   rotary_pos_emb,                                   │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:543 in forward                                         │
+│                                                                              │
+│    540 │   │   # Layer norm at the beginning of the transformer layer.       │
+│    541 │   │   layernorm_output = self.input_layernorm(hidden_states)        │
+│    542 │   │   # Self attention.                                             │
+│ ❱  543 │   │   attention_output, kv_cache = self.self_attention(             │
+│    544 │   │   │   layernorm_output,                                         │
+│    545 │   │   │   attention_mask,                                           │
+│    546 │   │   │   rotary_pos_emb,                                           │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:440 in forward                                         │
+│                                                                              │
+│    437 │   │   # core attention computation                                  │
+│    438 │   │   # ==================================                          │
+│    439 │   │                                                                 │
+│ ❱  440 │   │   context_layer = self.core_attention(query_layer, key_layer, v │
+│    441 │   │                                                                 │
+│    442 │   │   # =================                                           │
+│    443 │   │   # Output. [sq, b, h]                                          │
+│                                                                              │
+│ /data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/torch/ │
+│ nn/modules/module.py:1501 in _call_impl                                      │
+│                                                                              │
+│   1498 │   │   if not (self._backward_hooks or self._backward_pre_hooks or s │
+│   1499 │   │   │   │   or _global_backward_pre_hooks or _global_backward_hoo │
+│   1500 │   │   │   │   or _global_forward_hooks or _global_forward_pre_hooks │
+│ ❱ 1501 │   │   │   return forward_call(*args, **kwargs)                      │
+│   1502 │   │   # Do not call functions when jit is used                      │
+│   1503 │   │   full_backward_hooks, non_full_backward_hooks = [], []         │
+│   1504 │   │   backward_pre_hooks = []                                       │
+│                                                                              │
+│ /home/fyj2023/.cache/huggingface/modules/transformers_modules/chatglm2-6b-32 │
+│ k/modeling_chatglm.py:230 in forward                                         │
+│                                                                              │
+│    227 │   │   │   else:                                                     │
+│    228 │   │   │   │   if attention_mask is not None:                        │
+│    229 │   │   │   │   │   attention_mask = ~attention_mask                  │
+│ ❱  230 │   │   │   │   context_layer = torch.nn.functional.scaled_dot_produc │
+│    231 │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │ │
+│    232 │   │   │   context_layer = context_layer.permute(2, 0, 1, 3)         │
+│    233 │   │   │   new_context_layer_shape = context_layer.size()[:-2] + (se │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OutOfMemoryError: CUDA out of memory. Tried to allocate 12.73 GiB (GPU 0; 44.56 
+GiB total capacity; 5.41 GiB already allocated; 2.92 GiB free; 6.28 GiB reserved
+in total by PyTorch) If reserved memory is >> allocated memory try setting 
+max_split_size_mb to avoid fragmentation.  See documentation for Memory 
+Management and PYTORCH_CUDA_ALLOC_CONF

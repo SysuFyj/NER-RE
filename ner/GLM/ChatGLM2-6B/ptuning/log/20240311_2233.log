@@ -1,0 +1,982 @@
+master_addr is only used for static rdzv_backend and when rdzv_endpoint is not specified.
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+2024-03-11 22:34:00.795832: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-03-11 22:34:00.844575: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-03-11 22:34:00.849625: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-03-11 22:34:01.084550: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-03-11 22:34:01.878177: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-03-11 22:34:01.878298: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-03-11 22:34:01.878313: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-03-11 22:34:01.880037: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-03-11 22:34:01.880150: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-03-11 22:34:01.880166: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-03-11 22:34:01.996575: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-03-11 22:34:01.996704: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-03-11 22:34:01.996731: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+2024-03-11 22:34:02.286501: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-03-11 22:34:02.286667: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/anaconda/envs/torch18/lib/:
+2024-03-11 22:34:02.286684: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+[2024-03-11 22:34:02,697] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-03-11 22:34:02,698] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-03-11 22:34:02,943] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-03-11 22:34:03,229] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+data_args DataTrainingArguments(lang=None, dataset_name=None, dataset_config_name=None, prompt_column='input', response_column='output', history_column=None, train_file='/data2/fyj2023/project/ChatGLM2-6B/ptuning/data/government_procurement/data_sci/train.json', validation_file='/data2/fyj2023/project/ChatGLM2-6B/ptuning/data/government_procurement/data_sci/dev.json', test_file=None, overwrite_cache=True, preprocessing_num_workers=10, max_source_length=500, max_target_length=256, val_max_target_length=256, pad_to_max_length=False, max_train_samples=None, max_eval_samples=None, max_predict_samples=None, num_beams=None, ignore_pad_token_for_loss=True, source_prefix='', forced_bos_token=None)
+data_args DataTrainingArguments(lang=None, dataset_name=None, dataset_config_name=None, prompt_column='input', response_column='output', history_column=None, train_file='/data2/fyj2023/project/ChatGLM2-6B/ptuning/data/government_procurement/data_sci/train.json', validation_file='/data2/fyj2023/project/ChatGLM2-6B/ptuning/data/government_procurement/data_sci/dev.json', test_file=None, overwrite_cache=True, preprocessing_num_workers=10, max_source_length=500, max_target_length=256, val_max_target_length=256, pad_to_max_length=False, max_train_samples=None, max_eval_samples=None, max_predict_samples=None, num_beams=None, ignore_pad_token_for_loss=True, source_prefix='', forced_bos_token=None)
+03/11/2024 22:34:03 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+03/11/2024 22:34:03 - WARNING - __main__ - Process rank: 1, device: cuda:1, n_gpu: 1distributed training: True, 16-bits training: False
+03/11/2024 22:34:03 - INFO - __main__ - Training/evaluation parameters Seq2SeqTrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=False,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=no,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'fsdp_min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=16,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.02,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/runs/Mar11_22-34-03_ta,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=1000,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=3.0,
+optim=adamw_hf,
+optim_args=None,
+output_dir=output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=1,
+per_device_train_batch_size=1,
+predict_with_generate=True,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2,
+save_on_each_node=False,
+save_safetensors=False,
+save_steps=50,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+sortish_sampler=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+data_args DataTrainingArguments(lang=None, dataset_name=None, dataset_config_name=None, prompt_column='input', response_column='output', history_column=None, train_file='/data2/fyj2023/project/ChatGLM2-6B/ptuning/data/government_procurement/data_sci/train.json', validation_file='/data2/fyj2023/project/ChatGLM2-6B/ptuning/data/government_procurement/data_sci/dev.json', test_file=None, overwrite_cache=True, preprocessing_num_workers=10, max_source_length=500, max_target_length=256, val_max_target_length=256, pad_to_max_length=False, max_train_samples=None, max_eval_samples=None, max_predict_samples=None, num_beams=None, ignore_pad_token_for_loss=True, source_prefix='', forced_bos_token=None)
+data_args DataTrainingArguments(lang=None, dataset_name=None, dataset_config_name=None, prompt_column='input', response_column='output', history_column=None, train_file='/data2/fyj2023/project/ChatGLM2-6B/ptuning/data/government_procurement/data_sci/train.json', validation_file='/data2/fyj2023/project/ChatGLM2-6B/ptuning/data/government_procurement/data_sci/dev.json', test_file=None, overwrite_cache=True, preprocessing_num_workers=10, max_source_length=500, max_target_length=256, val_max_target_length=256, pad_to_max_length=False, max_train_samples=None, max_eval_samples=None, max_predict_samples=None, num_beams=None, ignore_pad_token_for_loss=True, source_prefix='', forced_bos_token=None)
+03/11/2024 22:34:03 - WARNING - __main__ - Process rank: 2, device: cuda:2, n_gpu: 1distributed training: True, 16-bits training: False
+03/11/2024 22:34:03 - WARNING - __main__ - Process rank: 3, device: cuda:3, n_gpu: 1distributed training: True, 16-bits training: False
+03/11/2024 22:34:04 - WARNING - datasets.builder - Using custom data configuration default-2972d34dbd70eddd
+03/11/2024 22:34:04 - WARNING - datasets.builder - Reusing dataset json (/home/fyj2023/.cache/huggingface/datasets/json/default-2972d34dbd70eddd/0.0.0/a3e658c4731e59120d44081ac10bf85dc7e1388126b92338344ce9661907f253)
+  0%|          | 0/2 [00:00<?, ?it/s]03/11/2024 22:34:04 - WARNING - datasets.builder - Using custom data configuration default-2972d34dbd70eddd
+100%|██████████| 2/2 [00:00<00:00, 559.54it/s]
+03/11/2024 22:34:04 - WARNING - datasets.builder - Reusing dataset json (/home/fyj2023/.cache/huggingface/datasets/json/default-2972d34dbd70eddd/0.0.0/a3e658c4731e59120d44081ac10bf85dc7e1388126b92338344ce9661907f253)
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 586.99it/s]
+03/11/2024 22:34:05 - WARNING - datasets.builder - Using custom data configuration default-2972d34dbd70eddd
+03/11/2024 22:34:05 - WARNING - datasets.builder - Reusing dataset json (/home/fyj2023/.cache/huggingface/datasets/json/default-2972d34dbd70eddd/0.0.0/a3e658c4731e59120d44081ac10bf85dc7e1388126b92338344ce9661907f253)
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 585.55it/s]
+[INFO|configuration_utils.py:667] 2024-03-11 22:34:05,011 >> loading configuration file /data2/fyj2023/pretrained_model/chatglm2-6b-32k/config.json
+[INFO|configuration_utils.py:667] 2024-03-11 22:34:05,015 >> loading configuration file /data2/fyj2023/pretrained_model/chatglm2-6b-32k/config.json
+[INFO|configuration_utils.py:725] 2024-03-11 22:34:05,016 >> Model config ChatGLMConfig {
+  "_name_or_path": "/data2/fyj2023/pretrained_model/chatglm2-6b-32k",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration"
+  },
+  "bias_dropout_fusion": true,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "rope_ratio": 16,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.30.2",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+
+[INFO|tokenization_utils_base.py:1821] 2024-03-11 22:34:05,020 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1821] 2024-03-11 22:34:05,020 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1821] 2024-03-11 22:34:05,020 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1821] 2024-03-11 22:34:05,020 >> loading file tokenizer_config.json
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+[INFO|modeling_utils.py:2575] 2024-03-11 22:34:05,189 >> loading weights file /data2/fyj2023/pretrained_model/chatglm2-6b-32k/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:577] 2024-03-11 22:34:05,190 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+
+03/11/2024 22:34:05 - WARNING - datasets.builder - Using custom data configuration default-2972d34dbd70eddd
+03/11/2024 22:34:05 - WARNING - datasets.builder - Reusing dataset json (/home/fyj2023/.cache/huggingface/datasets/json/default-2972d34dbd70eddd/0.0.0/a3e658c4731e59120d44081ac10bf85dc7e1388126b92338344ce9661907f253)
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 478.20it/s]
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:02<00:17,  2.93s/it]Loading checkpoint shards:  14%|█▍        | 1/7 [00:03<00:18,  3.08s/it]Loading checkpoint shards:  14%|█▍        | 1/7 [00:03<00:18,  3.06s/it]Loading checkpoint shards:  14%|█▍        | 1/7 [00:03<00:18,  3.05s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:06<00:15,  3.08s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:06<00:15,  3.05s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:06<00:15,  3.16s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:06<00:15,  3.10s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:09<00:12,  3.03s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:09<00:12,  3.09s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:09<00:12,  3.11s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:09<00:12,  3.10s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:12<00:09,  3.10s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:12<00:09,  3.11s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:12<00:09,  3.14s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:12<00:09,  3.17s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:15<00:06,  3.25s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:15<00:06,  3.25s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:15<00:06,  3.26s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:16<00:06,  3.29s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:20<00:03,  3.58s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:20<00:03,  3.58s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:20<00:03,  3.63s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:20<00:03,  3.53s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:21<00:00,  2.97s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:21<00:00,  3.13s/it]
+[WARNING|modeling_utils.py:3297] 2024-03-11 22:34:27,230 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data2/fyj2023/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards: 100%|██████████| 7/7 [00:21<00:00,  2.98s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:21<00:00,  3.12s/it]
+[WARNING|modeling_utils.py:3297] 2024-03-11 22:34:27,244 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data2/fyj2023/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading checkpoint shards: 100%|██████████| 7/7 [00:22<00:00,  3.04s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:22<00:00,  3.15s/it]
+[INFO|modeling_utils.py:3295] 2024-03-11 22:34:27,457 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+
+[WARNING|modeling_utils.py:3297] 2024-03-11 22:34:27,457 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data2/fyj2023/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2927] 2024-03-11 22:34:27,460 >> Generation config file not found, using a generation config created from the model config.
+Loading checkpoint shards: 100%|██████████| 7/7 [00:21<00:00,  2.96s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:21<00:00,  3.12s/it]
+[WARNING|modeling_utils.py:3297] 2024-03-11 22:34:27,467 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data2/fyj2023/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Quantized to 4 bit
+03/11/2024 22:34:29 - WARNING - cpm_kernels.library.base - Symbol nvrtcGetCUBIN not found in /usr/local/cuda/lib64/libnvrtc.so
+03/11/2024 22:34:29 - WARNING - cpm_kernels.library.base - Symbol nvrtcGetCUBINSize not found in /usr/local/cuda/lib64/libnvrtc.so
+Quantized to 4 bit
+03/11/2024 22:34:29 - WARNING - cpm_kernels.library.base - Symbol nvrtcGetCUBIN not found in /usr/local/cuda/lib64/libnvrtc.so
+03/11/2024 22:34:29 - WARNING - cpm_kernels.library.base - Symbol nvrtcGetCUBINSize not found in /usr/local/cuda/lib64/libnvrtc.so
+Quantized to 4 bit
+03/11/2024 22:34:30 - WARNING - cpm_kernels.library.base - Symbol nvrtcGetCUBIN not found in /usr/local/cuda/lib64/libnvrtc.so
+03/11/2024 22:34:30 - WARNING - cpm_kernels.library.base - Symbol nvrtcGetCUBINSize not found in /usr/local/cuda/lib64/libnvrtc.so
+Quantized to 4 bit
+03/11/2024 22:34:30 - WARNING - cpm_kernels.library.base - Symbol nvrtcGetCUBIN not found in /usr/local/cuda/lib64/libnvrtc.so
+03/11/2024 22:34:30 - WARNING - cpm_kernels.library.base - Symbol nvrtcGetCUBINSize not found in /usr/local/cuda/lib64/libnvrtc.so
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+Running tokenizer on train dataset #0:   0%|          | 0/1 [00:00<?, ?ba/s]
+Running tokenizer on train dataset #1:   0%|          | 0/1 [00:00<?, ?ba/s][Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+Running tokenizer on train dataset #2:   0%|          | 0/1 [00:00<?, ?ba/s][A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+Running tokenizer on train dataset #3:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A
+
+
+
+Running tokenizer on train dataset #4:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+
+Running tokenizer on train dataset #6:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+Running tokenizer on train dataset #5:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A
+
+
+
+
+
+
+Running tokenizer on train dataset #7:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A[A
+
+Running tokenizer on train dataset #2: 100%|██████████| 1/1 [00:00<00:00,  2.55ba/s][A[ARunning tokenizer on train dataset #2: 100%|██████████| 1/1 [00:00<00:00,  2.55ba/s]
+Running tokenizer on train dataset #0: 100%|██████████| 1/1 [00:00<00:00,  1.69ba/s]Running tokenizer on train dataset #0: 100%|██████████| 1/1 [00:00<00:00,  1.69ba/s]
+
+Running tokenizer on train dataset #1: 100%|██████████| 1/1 [00:00<00:00,  1.74ba/s][ARunning tokenizer on train dataset #1: 100%|██████████| 1/1 [00:00<00:00,  1.74ba/s]
+
+
+
+
+Running tokenizer on train dataset #4: 100%|██████████| 1/1 [00:00<00:00,  2.67ba/s][A[A[A[ARunning tokenizer on train dataset #4: 100%|██████████| 1/1 [00:00<00:00,  2.67ba/s]
+
+
+
+
+
+
+Running tokenizer on train dataset #6: 100%|██████████| 1/1 [00:00<00:00,  2.56ba/s][A[A[A[A[A[ARunning tokenizer on train dataset #6: 100%|██████████| 1/1 [00:00<00:00,  2.56ba/s]
+
+
+
+
+
+Running tokenizer on train dataset #5: 100%|██████████| 1/1 [00:00<00:00,  2.24ba/s][A[A[A[A[ARunning tokenizer on train dataset #5: 100%|██████████| 1/1 [00:00<00:00,  2.24ba/s]
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8: 100%|██████████| 1/1 [00:00<00:00,  2.35ba/s][A[A[A[A[A[A[A[ARunning tokenizer on train dataset #8: 100%|██████████| 1/1 [00:00<00:00,  2.35ba/s]
+
+
+
+Running tokenizer on train dataset #3: 100%|██████████| 1/1 [00:00<00:00,  1.80ba/s][A[A[ARunning tokenizer on train dataset #3: 100%|██████████| 1/1 [00:00<00:00,  1.80ba/s]
+
+
+
+
+
+
+
+Running tokenizer on train dataset #7: 100%|██████████| 1/1 [00:00<00:00,  2.33ba/s][A[A[A[A[A[A[ARunning tokenizer on train dataset #7: 100%|██████████| 1/1 [00:00<00:00,  2.32ba/s]
+
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9: 100%|██████████| 1/1 [00:00<00:00,  2.29ba/s][A[A[A[A[A[A[A[A[ARunning tokenizer on train dataset #9: 100%|██████████| 1/1 [00:00<00:00,  2.29ba/s]
+input_ids [64790, 64792, 790, 30951, 517, 30910, 30939, 30996, 13, 13, 54761, 31211, 3651, 383, 284, 4211, 291, 3842, 9613, 8123, 30932, 1845, 267, 1230, 290, 9613, 3608, 30954, 15404, 30944, 1858, 1252, 449, 12506, 1252, 449, 16538, 10906, 29892, 1252, 449, 14271, 995, 1252, 449, 22162, 4192, 901, 774, 17574, 15332, 2929, 8112, 12452, 343, 3450, 267, 25442, 6713, 428, 267, 4432, 30930, 8298, 284, 7434, 1230, 588, 267, 9613, 1922, 953, 430, 2232, 30930, 3485, 3758, 291, 267, 5588, 290, 260, 17560, 3806, 659, 15821, 12506, 2932, 30995, 30962, 2547, 449, 22162, 4192, 901, 774, 17574, 2932, 30995, 14706, 30962, 2547, 449, 30944, 1858, 2932, 30995, 14706, 30962, 2547, 449, 16538, 2932, 30995, 14706, 30962, 2547, 449, 14271, 995, 2932, 30995, 14706, 30962, 2547, 449, 29892, 2932, 30995, 14706, 30962, 30996, 19784, 1036, 1845, 8446, 323, 30954, 2959, 323, 3542, 289, 330, 966, 30941, 11355, 30941, 5561, 331, 267, 3835, 290, 5599, 5759, 290, 267, 6978, 1922, 343, 6515, 14594, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 918, 13, 13, 55437, 31211, 15821, 30944, 1858, 2932, 15404, 19258, 15332, 449, 12506, 2932, 30559, 449, 16538, 2932, 30559, 449, 29892, 2932, 30559, 449, 14271, 995, 2932, 30559, 449, 22162, 4192, 901, 774, 17574, 2932, 15404, 2074, 600, 5759, 1252, 449, 305, 1968, 329, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 5515, 30983, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+inputs [Round 1]
+
+问：You are an expert in named entity recognition, given the list of entity types: ["Material", "Method", "Task","Generic", "Metric", "OtherScientificTerm"], please extract entities that match the schema definition from the input. Return an empty list if the entity type does not exist. Please respond in the format of a JSON string like {"Method":[_], "OtherScientificTerm":[_,_], "Material":[_,_], "Task":[_,_], "Metric":[_,_], "Generic":[_,_]}.The given sentence is: English is shown to be trans-context-free on the basis of coordinations of the respectively type that involve strictly syntactic cross-serial agreement .
+
+答： {"Material": ["English"], "Method": [], "Task": [], "Generic": [], "Metric": [], "OtherScientificTerm": ["coordinations", "strictly syntactic cross-serial agreement"]}
+label_ids [-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 15821, 30944, 1858, 2932, 15404, 19258, 15332, 449, 12506, 2932, 30559, 449, 16538, 2932, 30559, 449, 29892, 2932, 30559, 449, 14271, 995, 2932, 30559, 449, 22162, 4192, 901, 774, 17574, 2932, 15404, 2074, 600, 5759, 1252, 449, 305, 1968, 329, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 5515, 30983, 2, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100]
+labels {"Material": ["English"], "Method": [], "Task": [], "Generic": [], "Metric": [], "OtherScientificTerm": ["coordinations", "strictly syntactic cross-serial agreement"]}
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+Running tokenizer on train dataset #0:   0%|          | 0/1 [00:00<?, ?ba/s]normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+Running tokenizer on train dataset #1:   0%|          | 0/1 [00:00<?, ?ba/s][Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+Running tokenizer on train dataset #0:   0%|          | 0/1 [00:00<?, ?ba/s]normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+Running tokenizer on train dataset #2:   0%|          | 0/1 [00:00<?, ?ba/s][A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+Running tokenizer on train dataset #1:   0%|          | 0/1 [00:00<?, ?ba/s][A
+
+
+Running tokenizer on train dataset #3:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A
+
+
+
+Running tokenizer on train dataset #4:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+Running tokenizer on train dataset #2:   0%|          | 0/1 [00:00<?, ?ba/s][A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+Running tokenizer on train dataset #3:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[ARunning tokenizer on train dataset #0:   0%|          | 0/1 [00:00<?, ?ba/s][INFO|trainer.py:577] 2024-03-11 22:34:47,553 >> max_steps is given, it will override any value given in num_train_epochs
+
+
+
+
+
+Running tokenizer on train dataset #5:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+Running tokenizer on train dataset #4:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+Running tokenizer on train dataset #1:   0%|          | 0/1 [00:00<?, ?ba/s][A
+
+
+
+
+
+Running tokenizer on train dataset #6:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+Running tokenizer on train dataset #5:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+Running tokenizer on train dataset #2:   0%|          | 0/1 [00:00<?, ?ba/s][A[A
+
+
+
+
+
+
+Running tokenizer on train dataset #7:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+Running tokenizer on train dataset #3:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A
+
+
+
+
+
+Running tokenizer on train dataset #6:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+Running tokenizer on train dataset #4:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+
+
+Running tokenizer on train dataset #7:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A
+
+
+
+
+Running tokenizer on train dataset #5:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+
+Running tokenizer on train dataset #6:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+
+
+Running tokenizer on train dataset #7:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[Anormalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9:   0%|          | 0/1 [00:00<?, ?ba/s][A[A[A[A[A[A[A[A[A
+
+Running tokenizer on train dataset #2: 100%|██████████| 1/1 [00:00<00:00,  1.95ba/s][A[ARunning tokenizer on train dataset #2: 100%|██████████| 1/1 [00:00<00:00,  1.95ba/s]
+
+Running tokenizer on train dataset #1: 100%|██████████| 1/1 [00:00<00:00,  1.70ba/s][ARunning tokenizer on train dataset #1: 100%|██████████| 1/1 [00:00<00:00,  1.70ba/s]
+Running tokenizer on train dataset #0: 100%|██████████| 1/1 [00:00<00:00,  1.80ba/s]Running tokenizer on train dataset #0: 100%|██████████| 1/1 [00:00<00:00,  1.80ba/s]
+
+
+Running tokenizer on train dataset #2: 100%|██████████| 1/1 [00:00<00:00,  2.15ba/s][A[ARunning tokenizer on train dataset #2: 100%|██████████| 1/1 [00:00<00:00,  2.15ba/s]
+Running tokenizer on train dataset #0: 100%|██████████| 1/1 [00:00<00:00,  1.53ba/s]Running tokenizer on train dataset #0: 100%|██████████| 1/1 [00:00<00:00,  1.53ba/s]
+/data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+
+
+
+
+Running tokenizer on train dataset #4: 100%|██████████| 1/1 [00:00<00:00,  1.98ba/s][A[A[A[ARunning tokenizer on train dataset #4: 100%|██████████| 1/1 [00:00<00:00,  1.98ba/s]
+
+
+
+
+Running tokenizer on train dataset #1: 100%|██████████| 1/1 [00:00<00:00,  1.56ba/s][ARunning tokenizer on train dataset #3: 100%|██████████| 1/1 [00:00<00:00,  1.57ba/s][A[A[ARunning tokenizer on train dataset #1: 100%|██████████| 1/1 [00:00<00:00,  1.55ba/s]
+Running tokenizer on train dataset #3: 100%|██████████| 1/1 [00:00<00:00,  1.56ba/s]
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8: 100%|██████████| 1/1 [00:00<00:00,  2.33ba/s][A[A[A[A[A[A[A[ARunning tokenizer on train dataset #8: 100%|██████████| 1/1 [00:00<00:00,  2.33ba/s]
+
+
+
+
+Running tokenizer on train dataset #4: 100%|██████████| 1/1 [00:00<00:00,  1.82ba/s][A[A[A[ARunning tokenizer on train dataset #4: 100%|██████████| 1/1 [00:00<00:00,  1.82ba/s]
+
+
+
+Running tokenizer on train dataset #3: 100%|██████████| 1/1 [00:00<00:00,  1.59ba/s][A[A[ARunning tokenizer on train dataset #3: 100%|██████████| 1/1 [00:00<00:00,  1.59ba/s]
+Running tokenizer on train dataset #0: 100%|██████████| 1/1 [00:00<00:00,  1.60ba/s]
+
+
+
+
+Running tokenizer on train dataset #0: 100%|██████████| 1/1 [00:00<00:00,  1.60ba/s]
+Running tokenizer on train dataset #5: 100%|██████████| 1/1 [00:00<00:00,  1.77ba/s][A[A[A[A[ARunning tokenizer on train dataset #5: 100%|██████████| 1/1 [00:00<00:00,  1.77ba/s]
+
+
+
+
+
+
+Running tokenizer on train dataset #6: 100%|██████████| 1/1 [00:00<00:00,  1.91ba/s][A[A[A[A[A[ARunning tokenizer on train dataset #6: 100%|██████████| 1/1 [00:00<00:00,  1.90ba/s]
+
+Running tokenizer on train dataset #1: 100%|██████████| 1/1 [00:00<00:00,  1.67ba/s][ARunning tokenizer on train dataset #1: 100%|██████████| 1/1 [00:00<00:00,  1.67ba/s]
+
+
+Running tokenizer on train dataset #2: 100%|██████████| 1/1 [00:00<00:00,  1.68ba/s][A[ARunning tokenizer on train dataset #2: 100%|██████████| 1/1 [00:00<00:00,  1.68ba/s]
+
+
+
+
+
+Running tokenizer on train dataset #5: 100%|██████████| 1/1 [00:00<00:00,  1.50ba/s][A[A[A[A[ARunning tokenizer on train dataset #5: 100%|██████████| 1/1 [00:00<00:00,  1.50ba/s]
+
+
+
+
+Running tokenizer on train dataset #4: 100%|██████████| 1/1 [00:00<00:00,  1.84ba/s][A[A[A[ARunning tokenizer on train dataset #4: 100%|██████████| 1/1 [00:00<00:00,  1.83ba/s]
+
+
+
+
+
+
+Running tokenizer on train dataset #6: 100%|██████████| 1/1 [00:00<00:00,  1.53ba/s][A[A[A[A[A[ARunning tokenizer on train dataset #6: 100%|██████████| 1/1 [00:00<00:00,  1.53ba/s]
+
+
+
+
+
+Running tokenizer on train dataset #5: 100%|██████████| 1/1 [00:00<00:00,  1.90ba/s][A[A[A[A[ARunning tokenizer on train dataset #5: 100%|██████████| 1/1 [00:00<00:00,  1.90ba/s]
+
+
+
+Running tokenizer on train dataset #3: 100%|██████████| 1/1 [00:00<00:00,  1.62ba/s][A[A[ARunning tokenizer on train dataset #3: 100%|██████████| 1/1 [00:00<00:00,  1.62ba/s]
+
+
+
+
+
+
+
+Running tokenizer on train dataset #7: 100%|██████████| 1/1 [00:00<00:00,  1.46ba/s][A[A[A[A[A[A[ARunning tokenizer on train dataset #7: 100%|██████████| 1/1 [00:00<00:00,  1.46ba/s]
+
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9: 100%|██████████| 1/1 [00:00<00:00,  1.51ba/s][A[A[A[A[A[A[A[A[ARunning tokenizer on train dataset #9: 100%|██████████| 1/1 [00:00<00:00,  1.51ba/s]
+
+
+
+
+
+
+Running tokenizer on train dataset #6: 100%|██████████| 1/1 [00:00<00:00,  1.64ba/s][A[A[A[A[A[ARunning tokenizer on train dataset #6: 100%|██████████| 1/1 [00:00<00:00,  1.64ba/s]
+
+
+
+
+
+
+
+Running tokenizer on train dataset #7: 100%|██████████| 1/1 [00:00<00:00,  1.79ba/s][A[A[A[A[A[A[ARunning tokenizer on train dataset #7: 100%|██████████| 1/1 [00:00<00:00,  1.79ba/s]
+
+
+
+
+
+
+
+Running tokenizer on train dataset #7: 100%|██████████| 1/1 [00:00<00:00,  1.53ba/s][A[A[A[A[A[A[ARunning tokenizer on train dataset #7: 100%|██████████| 1/1 [00:00<00:00,  1.53ba/s]
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8: 100%|██████████| 1/1 [00:00<00:00,  1.86ba/s][A[A[A[A[A[A[A[ARunning tokenizer on train dataset #8: 100%|██████████| 1/1 [00:00<00:00,  1.86ba/s]
+
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9: 100%|██████████| 1/1 [00:00<00:00,  1.86ba/s][A[A[A[A[A[A[A[A[ARunning tokenizer on train dataset #9: 100%|██████████| 1/1 [00:00<00:00,  1.86ba/s]
+
+
+
+
+
+
+
+
+
+Running tokenizer on train dataset #9: 100%|██████████| 1/1 [00:00<00:00,  1.56ba/s][A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+Running tokenizer on train dataset #8: 100%|██████████| 1/1 [00:00<00:00,  1.54ba/s][A[A[A[A[A[A[A[ARunning tokenizer on train dataset #9: 100%|██████████| 1/1 [00:00<00:00,  1.56ba/s]
+Running tokenizer on train dataset #8: 100%|██████████| 1/1 [00:00<00:00,  1.54ba/s]
+input_ids [64790, 64792, 790, 30951, 517, 30910, 30939, 30996, 13, 13, 54761, 31211, 3651, 383, 284, 4211, 291, 3842, 9613, 8123, 30932, 1845, 267, 1230, 290, 9613, 3608, 30954, 15404, 30944, 1858, 1252, 449, 12506, 1252, 449, 16538, 10906, 29892, 1252, 449, 14271, 995, 1252, 449, 22162, 4192, 901, 774, 17574, 15332, 2929, 8112, 12452, 343, 3450, 267, 25442, 6713, 428, 267, 4432, 30930, 8298, 284, 7434, 1230, 588, 267, 9613, 1922, 953, 430, 2232, 30930, 3485, 3758, 291, 267, 5588, 290, 260, 17560, 3806, 659, 15821, 12506, 2932, 30995, 30962, 2547, 449, 22162, 4192, 901, 774, 17574, 2932, 30995, 14706, 30962, 2547, 449, 30944, 1858, 2932, 30995, 14706, 30962, 2547, 449, 16538, 2932, 30995, 14706, 30962, 2547, 449, 14271, 995, 2932, 30995, 14706, 30962, 2547, 449, 29892, 2932, 30995, 14706, 30962, 30996, 19784, 1036, 1845, 8446, 323, 30954, 2959, 323, 3542, 289, 330, 966, 30941, 11355, 30941, 5561, 331, 267, 3835, 290, 5599, 5759, 290, 267, 6978, 1922, 343, 6515, 14594, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 918, 13, 13, 55437, 31211, 15821, 30944, 1858, 2932, 15404, 19258, 15332, 449, 12506, 2932, 30559, 449, 16538, 2932, 30559, 449, 29892, 2932, 30559, 449, 14271, 995, 2932, 30559, 449, 22162, 4192, 901, 774, 17574, 2932, 15404, 2074, 600, 5759, 1252, 449, 305, 1968, 329, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 5515, 30983, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+inputs [Round 1]
+
+问：You are an expert in named entity recognition, given the list of entity types: ["Material", "Method", "Task","Generic", "Metric", "OtherScientificTerm"], please extract entities that match the schema definition from the input. Return an empty list if the entity type does not exist. Please respond in the format of a JSON string like {"Method":[_], "OtherScientificTerm":[_,_], "Material":[_,_], "Task":[_,_], "Metric":[_,_], "Generic":[_,_]}.The given sentence is: English is shown to be trans-context-free on the basis of coordinations of the respectively type that involve strictly syntactic cross-serial agreement .
+
+答： {"Material": ["English"], "Method": [], "Task": [], "Generic": [], "Metric": [], "OtherScientificTerm": ["coordinations", "strictly syntactic cross-serial agreement"]}
+label_ids [-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 15821, 30944, 1858, 2932, 15404, 19258, 15332, 449, 12506, 2932, 30559, 449, 16538, 2932, 30559, 449, 29892, 2932, 30559, 449, 14271, 995, 2932, 30559, 449, 22162, 4192, 901, 774, 17574, 2932, 15404, 2074, 600, 5759, 1252, 449, 305, 1968, 329, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 5515, 30983, 2, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100]
+labels {"Material": ["English"], "Method": [], "Task": [], "Generic": [], "Metric": [], "OtherScientificTerm": ["coordinations", "strictly syntactic cross-serial agreement"]}
+input_ids [64790, 64792, 790, 30951, 517, 30910, 30939, 30996, 13, 13, 54761, 31211, 3651, 383, 284, 4211, 291, 3842, 9613, 8123, 30932, 1845, 267, 1230, 290, 9613, 3608, 30954, 15404, 30944, 1858, 1252, 449, 12506, 1252, 449, 16538, 10906, 29892, 1252, 449, 14271, 995, 1252, 449, 22162, 4192, 901, 774, 17574, 15332, 2929, 8112, 12452, 343, 3450, 267, 25442, 6713, 428, 267, 4432, 30930, 8298, 284, 7434, 1230, 588, 267, 9613, 1922, 953, 430, 2232, 30930, 3485, 3758, 291, 267, 5588, 290, 260, 17560, 3806, 659, 15821, 12506, 2932, 30995, 30962, 2547, 449, 22162, 4192, 901, 774, 17574, 2932, 30995, 14706, 30962, 2547, 449, 30944, 1858, 2932, 30995, 14706, 30962, 2547, 449, 16538, 2932, 30995, 14706, 30962, 2547, 449, 14271, 995, 2932, 30995, 14706, 30962, 2547, 449, 29892, 2932, 30995, 14706, 30962, 30996, 19784, 1036, 1845, 8446, 323, 30954, 2959, 323, 3542, 289, 330, 966, 30941, 11355, 30941, 5561, 331, 267, 3835, 290, 5599, 5759, 290, 267, 6978, 1922, 343, 6515, 14594, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 918, 13, 13, 55437, 31211, 15821, 30944, 1858, 2932, 15404, 19258, 15332, 449, 12506, 2932, 30559, 449, 16538, 2932, 30559, 449, 29892, 2932, 30559, 449, 14271, 995, 2932, 30559, 449, 22162, 4192, 901, 774, 17574, 2932, 15404, 2074, 600, 5759, 1252, 449, 305, 1968, 329, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 5515, 30983, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+inputs [Round 1]
+
+问：You are an expert in named entity recognition, given the list of entity types: ["Material", "Method", "Task","Generic", "Metric", "OtherScientificTerm"], please extract entities that match the schema definition from the input. Return an empty list if the entity type does not exist. Please respond in the format of a JSON string like {"Method":[_], "OtherScientificTerm":[_,_], "Material":[_,_], "Task":[_,_], "Metric":[_,_], "Generic":[_,_]}.The given sentence is: English is shown to be trans-context-free on the basis of coordinations of the respectively type that involve strictly syntactic cross-serial agreement .
+
+答： {"Material": ["English"], "Method": [], "Task": [], "Generic": [], "Metric": [], "OtherScientificTerm": ["coordinations", "strictly syntactic cross-serial agreement"]}
+label_ids [-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 15821, 30944, 1858, 2932, 15404, 19258, 15332, 449, 12506, 2932, 30559, 449, 16538, 2932, 30559, 449, 29892, 2932, 30559, 449, 14271, 995, 2932, 30559, 449, 22162, 4192, 901, 774, 17574, 2932, 15404, 2074, 600, 5759, 1252, 449, 305, 1968, 329, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 5515, 30983, 2, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100]
+labels {"Material": ["English"], "Method": [], "Task": [], "Generic": [], "Metric": [], "OtherScientificTerm": ["coordinations", "strictly syntactic cross-serial agreement"]}
+input_ids [64790, 64792, 790, 30951, 517, 30910, 30939, 30996, 13, 13, 54761, 31211, 3651, 383, 284, 4211, 291, 3842, 9613, 8123, 30932, 1845, 267, 1230, 290, 9613, 3608, 30954, 15404, 30944, 1858, 1252, 449, 12506, 1252, 449, 16538, 10906, 29892, 1252, 449, 14271, 995, 1252, 449, 22162, 4192, 901, 774, 17574, 15332, 2929, 8112, 12452, 343, 3450, 267, 25442, 6713, 428, 267, 4432, 30930, 8298, 284, 7434, 1230, 588, 267, 9613, 1922, 953, 430, 2232, 30930, 3485, 3758, 291, 267, 5588, 290, 260, 17560, 3806, 659, 15821, 12506, 2932, 30995, 30962, 2547, 449, 22162, 4192, 901, 774, 17574, 2932, 30995, 14706, 30962, 2547, 449, 30944, 1858, 2932, 30995, 14706, 30962, 2547, 449, 16538, 2932, 30995, 14706, 30962, 2547, 449, 14271, 995, 2932, 30995, 14706, 30962, 2547, 449, 29892, 2932, 30995, 14706, 30962, 30996, 19784, 1036, 1845, 8446, 323, 30954, 2959, 323, 3542, 289, 330, 966, 30941, 11355, 30941, 5561, 331, 267, 3835, 290, 5599, 5759, 290, 267, 6978, 1922, 343, 6515, 14594, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 918, 13, 13, 55437, 31211, 15821, 30944, 1858, 2932, 15404, 19258, 15332, 449, 12506, 2932, 30559, 449, 16538, 2932, 30559, 449, 29892, 2932, 30559, 449, 14271, 995, 2932, 30559, 449, 22162, 4192, 901, 774, 17574, 2932, 15404, 2074, 600, 5759, 1252, 449, 305, 1968, 329, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 5515, 30983, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+inputs [Round 1]
+
+问：You are an expert in named entity recognition, given the list of entity types: ["Material", "Method", "Task","Generic", "Metric", "OtherScientificTerm"], please extract entities that match the schema definition from the input. Return an empty list if the entity type does not exist. Please respond in the format of a JSON string like {"Method":[_], "OtherScientificTerm":[_,_], "Material":[_,_], "Task":[_,_], "Metric":[_,_], "Generic":[_,_]}.The given sentence is: English is shown to be trans-context-free on the basis of coordinations of the respectively type that involve strictly syntactic cross-serial agreement .
+
+答： {"Material": ["English"], "Method": [], "Task": [], "Generic": [], "Metric": [], "OtherScientificTerm": ["coordinations", "strictly syntactic cross-serial agreement"]}
+label_ids [-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 15821, 30944, 1858, 2932, 15404, 19258, 15332, 449, 12506, 2932, 30559, 449, 16538, 2932, 30559, 449, 29892, 2932, 30559, 449, 14271, 995, 2932, 30559, 449, 22162, 4192, 901, 774, 17574, 2932, 15404, 2074, 600, 5759, 1252, 449, 305, 1968, 329, 3593, 30912, 15813, 3179, 30941, 64633, 4671, 5515, 30983, 2, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100]
+labels {"Material": ["English"], "Method": [], "Task": [], "Generic": [], "Metric": [], "OtherScientificTerm": ["coordinations", "strictly syntactic cross-serial agreement"]}
+/data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+/data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+/data2/fyj2023/conda/envs/chatglm2_6b_fyj/lib/python3.8/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1786] 2024-03-11 22:34:51,748 >> ***** Running training *****
+[INFO|trainer.py:1787] 2024-03-11 22:34:51,749 >>   Num examples = 1,861
+[INFO|trainer.py:1788] 2024-03-11 22:34:51,749 >>   Num Epochs = 35
+[INFO|trainer.py:1789] 2024-03-11 22:34:51,749 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:1790] 2024-03-11 22:34:51,749 >>   Total train batch size (w. parallel, distributed & accumulation) = 64
+[INFO|trainer.py:1791] 2024-03-11 22:34:51,749 >>   Gradient Accumulation steps = 16
+[INFO|trainer.py:1792] 2024-03-11 22:34:51,749 >>   Total optimization steps = 1,000
+[INFO|trainer.py:1793] 2024-03-11 22:34:51,752 >>   Number of trainable parameters = 1,835,008
+  0%|          | 0/1000 [00:00<?, ?it/s]03/11/2024 22:34:52 - WARNING - transformers_modules.chatglm2-6b-32k.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+03/11/2024 22:34:52 - WARNING - transformers_modules.chatglm2-6b-32k.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+03/11/2024 22:34:52 - WARNING - transformers_modules.chatglm2-6b-32k.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+03/11/2024 22:34:52 - WARNING - transformers_modules.chatglm2-6b-32k.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+  0%|          | 1/1000 [00:14<3:57:24, 14.26s/it]  0%|          | 2/1000 [00:25<3:31:25, 12.71s/it]  0%|          | 3/1000 [00:37<3:23:16, 12.23s/it]  0%|          | 4/1000 [00:49<3:19:43, 12.03s/it]  0%|          | 5/1000 [01:01<3:18:09, 11.95s/it]  1%|          | 6/1000 [01:12<3:17:18, 11.91s/it]  1%|          | 7/1000 [01:24<3:16:47, 11.89s/it]  1%|          | 8/1000 [01:36<3:16:35, 11.89s/it]  1%|          | 9/1000 [01:48<3:16:32, 11.90s/it]  1%|          | 10/1000 [02:00<3:16:42, 11.92s/it]                                                   {'loss': 0.5422, 'learning_rate': 0.0198, 'epoch': 0.34}
+  1%|          | 10/1000 [02:00<3:16:42, 11.92s/it]  1%|          | 11/1000 [02:12<3:17:00, 11.95s/it]  1%|          | 12/1000 [02:24<3:17:19, 11.98s/it]  1%|▏         | 13/1000 [02:36<3:17:36, 12.01s/it]  1%|▏         | 14/1000 [02:48<3:17:57, 12.05s/it]  2%|▏         | 15/1000 [03:00<3:18:12, 12.07s/it]  2%|▏         | 16/1000 [03:13<3:18:16, 12.09s/it]  2%|▏         | 17/1000 [03:25<3:18:26, 12.11s/it]  2%|▏         | 18/1000 [03:37<3:18:24, 12.12s/it]  2%|▏         | 19/1000 [03:49<3:18:20, 12.13s/it]  2%|▏         | 20/1000 [04:01<3:18:31, 12.15s/it]                                                   {'loss': 0.3142, 'learning_rate': 0.0196, 'epoch': 0.69}
+  2%|▏         | 20/1000 [04:01<3:18:31, 12.15s/it]  2%|▏         | 21/1000 [04:13<3:18:18, 12.15s/it]  2%|▏         | 22/1000 [04:26<3:18:17, 12.17s/it]  2%|▏         | 23/1000 [04:38<3:18:09, 12.17s/it]  2%|▏         | 24/1000 [04:50<3:17:45, 12.16s/it]  2%|▎         | 25/1000 [05:02<3:17:25, 12.15s/it]  3%|▎         | 26/1000 [05:14<3:16:59, 12.14s/it]  3%|▎         | 27/1000 [05:26<3:16:23, 12.11s/it]  3%|▎         | 28/1000 [05:38<3:16:00, 12.10s/it]  3%|▎         | 29/1000 [05:50<3:15:43, 12.09s/it]  3%|▎         | 30/1000 [06:02<3:15:13, 12.08s/it]                                                   {'loss': 0.2495, 'learning_rate': 0.0194, 'epoch': 1.03}
+  3%|▎         | 30/1000 [06:02<3:15:13, 12.08s/it]  3%|▎         | 31/1000 [06:14<3:14:50, 12.06s/it]  3%|▎         | 32/1000 [06:26<3:14:31, 12.06s/it]  3%|▎         | 33/1000 [06:38<3:14:05, 12.04s/it]  3%|▎         | 34/1000 [06:51<3:13:49, 12.04s/it]  4%|▎         | 35/1000 [07:03<3:13:28, 12.03s/it]  4%|▎         | 36/1000 [07:15<3:13:19, 12.03s/it]  4%|▎         | 37/1000 [07:27<3:13:16, 12.04s/it]  4%|▍         | 38/1000 [07:39<3:13:06, 12.04s/it]  4%|▍         | 39/1000 [07:51<3:12:53, 12.04s/it]  4%|▍         | 40/1000 [08:03<3:12:40, 12.04s/it]                                                   {'loss': 0.234, 'learning_rate': 0.0192, 'epoch': 1.37}
+  4%|▍         | 40/1000 [08:03<3:12:40, 12.04s/it]  4%|▍         | 41/1000 [08:15<3:12:21, 12.03s/it]  4%|▍         | 42/1000 [08:27<3:12:04, 12.03s/it]  4%|▍         | 43/1000 [08:39<3:11:48, 12.03s/it]  4%|▍         | 44/1000 [08:51<3:11:34, 12.02s/it]  4%|▍         | 45/1000 [09:03<3:11:27, 12.03s/it]  5%|▍         | 46/1000 [09:15<3:11:10, 12.02s/it]  5%|▍         | 47/1000 [09:27<3:11:00, 12.03s/it]  5%|▍         | 48/1000 [09:39<3:10:52, 12.03s/it]  5%|▍         | 49/1000 [09:51<3:10:46, 12.04s/it]  5%|▌         | 50/1000 [10:03<3:10:33, 12.04s/it]                                                   {'loss': 0.2184, 'learning_rate': 0.019, 'epoch': 1.72}
+  5%|▌         | 50/1000 [10:03<3:10:33, 12.04s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-11 22:44:56,209 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-50/config.json
+[INFO|configuration_utils.py:364] 2024-03-11 22:44:56,210 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-50/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-11 22:44:56,229 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-50/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-11 22:44:56,230 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-50/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-11 22:44:56,230 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-50/special_tokens_map.json
+  5%|▌         | 51/1000 [10:15<3:10:58, 12.07s/it]  5%|▌         | 52/1000 [10:27<3:10:45, 12.07s/it]  5%|▌         | 53/1000 [10:39<3:10:38, 12.08s/it]  5%|▌         | 54/1000 [10:51<3:10:31, 12.08s/it]  6%|▌         | 55/1000 [11:04<3:10:18, 12.08s/it]  6%|▌         | 56/1000 [11:16<3:10:04, 12.08s/it]  6%|▌         | 57/1000 [11:28<3:09:55, 12.08s/it]  6%|▌         | 58/1000 [11:40<3:09:54, 12.10s/it]  6%|▌         | 59/1000 [11:52<3:09:42, 12.10s/it]  6%|▌         | 60/1000 [12:04<3:09:27, 12.09s/it]                                                   {'loss': 0.195, 'learning_rate': 0.0188, 'epoch': 2.06}
+  6%|▌         | 60/1000 [12:04<3:09:27, 12.09s/it]  6%|▌         | 61/1000 [12:16<3:09:24, 12.10s/it]  6%|▌         | 62/1000 [12:28<3:09:08, 12.10s/it]  6%|▋         | 63/1000 [12:40<3:09:01, 12.10s/it]  6%|▋         | 64/1000 [12:52<3:08:51, 12.11s/it]  6%|▋         | 65/1000 [13:05<3:08:43, 12.11s/it]  7%|▋         | 66/1000 [13:17<3:08:33, 12.11s/it]  7%|▋         | 67/1000 [13:29<3:08:26, 12.12s/it]  7%|▋         | 68/1000 [13:41<3:08:08, 12.11s/it]  7%|▋         | 69/1000 [13:53<3:07:50, 12.11s/it]  7%|▋         | 70/1000 [14:05<3:07:33, 12.10s/it]                                                   {'loss': 0.181, 'learning_rate': 0.018600000000000002, 'epoch': 2.4}
+  7%|▋         | 70/1000 [14:05<3:07:33, 12.10s/it]  7%|▋         | 71/1000 [14:17<3:07:24, 12.10s/it]  7%|▋         | 72/1000 [14:29<3:07:14, 12.11s/it]  7%|▋         | 73/1000 [14:41<3:06:57, 12.10s/it]  7%|▋         | 74/1000 [14:54<3:06:51, 12.11s/it]  8%|▊         | 75/1000 [15:06<3:06:41, 12.11s/it]  8%|▊         | 76/1000 [15:18<3:06:29, 12.11s/it]  8%|▊         | 77/1000 [15:30<3:06:13, 12.11s/it]  8%|▊         | 78/1000 [15:42<3:05:55, 12.10s/it]  8%|▊         | 79/1000 [15:54<3:05:40, 12.10s/it]  8%|▊         | 80/1000 [16:06<3:05:26, 12.09s/it]                                                   {'loss': 0.171, 'learning_rate': 0.0184, 'epoch': 2.75}
+  8%|▊         | 80/1000 [16:06<3:05:26, 12.09s/it]  8%|▊         | 81/1000 [16:18<3:05:29, 12.11s/it]  8%|▊         | 82/1000 [16:30<3:05:19, 12.11s/it]  8%|▊         | 83/1000 [16:42<3:05:06, 12.11s/it]  8%|▊         | 84/1000 [16:55<3:04:58, 12.12s/it]  8%|▊         | 85/1000 [17:07<3:05:01, 12.13s/it]  9%|▊         | 86/1000 [17:19<3:05:03, 12.15s/it]  9%|▊         | 87/1000 [17:31<3:05:02, 12.16s/it]  9%|▉         | 88/1000 [17:43<3:04:52, 12.16s/it]  9%|▉         | 89/1000 [17:55<3:04:40, 12.16s/it]  9%|▉         | 90/1000 [18:08<3:04:41, 12.18s/it]                                                   {'loss': 0.165, 'learning_rate': 0.0182, 'epoch': 3.09}
+  9%|▉         | 90/1000 [18:08<3:04:41, 12.18s/it]  9%|▉         | 91/1000 [18:20<3:04:20, 12.17s/it]  9%|▉         | 92/1000 [18:32<3:03:59, 12.16s/it]  9%|▉         | 93/1000 [18:44<3:03:32, 12.14s/it]  9%|▉         | 94/1000 [18:56<3:03:12, 12.13s/it] 10%|▉         | 95/1000 [19:08<3:02:56, 12.13s/it] 10%|▉         | 96/1000 [19:20<3:02:45, 12.13s/it] 10%|▉         | 97/1000 [19:33<3:02:46, 12.14s/it] 10%|▉         | 98/1000 [19:45<3:02:28, 12.14s/it] 10%|▉         | 99/1000 [19:57<3:02:14, 12.14s/it] 10%|█         | 100/1000 [20:09<3:01:58, 12.13s/it]                                                    {'loss': 0.1598, 'learning_rate': 0.018000000000000002, 'epoch': 3.43}
+ 10%|█         | 100/1000 [20:09<3:01:58, 12.13s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-11 22:55:02,228 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-100/config.json
+[INFO|configuration_utils.py:364] 2024-03-11 22:55:02,229 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-100/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-11 22:55:02,241 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-100/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-11 22:55:02,241 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-100/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-11 22:55:02,242 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-100/special_tokens_map.json
+ 10%|█         | 101/1000 [20:21<3:02:09, 12.16s/it] 10%|█         | 102/1000 [20:33<3:01:46, 12.15s/it] 10%|█         | 103/1000 [20:45<3:01:22, 12.13s/it] 10%|█         | 104/1000 [20:58<3:01:04, 12.13s/it] 10%|█         | 105/1000 [21:10<3:00:46, 12.12s/it] 11%|█         | 106/1000 [21:22<3:00:41, 12.13s/it] 11%|█         | 107/1000 [21:34<3:00:23, 12.12s/it] 11%|█         | 108/1000 [21:46<3:00:03, 12.11s/it] 11%|█         | 109/1000 [21:58<2:59:46, 12.11s/it] 11%|█         | 110/1000 [22:10<2:59:30, 12.10s/it]                                                    {'loss': 0.1507, 'learning_rate': 0.0178, 'epoch': 3.78}
+ 11%|█         | 110/1000 [22:10<2:59:30, 12.10s/it] 11%|█         | 111/1000 [22:22<2:59:24, 12.11s/it] 11%|█         | 112/1000 [22:34<2:59:09, 12.11s/it] 11%|█▏        | 113/1000 [22:46<2:58:54, 12.10s/it] 11%|█▏        | 114/1000 [22:59<2:58:34, 12.09s/it] 12%|█▏        | 115/1000 [23:11<2:58:17, 12.09s/it] 12%|█▏        | 116/1000 [23:23<2:58:12, 12.10s/it] 12%|█▏        | 117/1000 [23:35<2:57:55, 12.09s/it] 12%|█▏        | 118/1000 [23:47<2:57:41, 12.09s/it] 12%|█▏        | 119/1000 [23:59<2:57:21, 12.08s/it] 12%|█▏        | 120/1000 [24:11<2:57:13, 12.08s/it]                                                    {'loss': 0.1412, 'learning_rate': 0.0176, 'epoch': 4.12}
+ 12%|█▏        | 120/1000 [24:11<2:57:13, 12.08s/it] 12%|█▏        | 121/1000 [24:23<2:56:57, 12.08s/it] 12%|█▏        | 122/1000 [24:35<2:56:48, 12.08s/it] 12%|█▏        | 123/1000 [24:47<2:56:44, 12.09s/it] 12%|█▏        | 124/1000 [24:59<2:56:28, 12.09s/it] 12%|█▎        | 125/1000 [25:11<2:56:08, 12.08s/it] 13%|█▎        | 126/1000 [25:24<2:55:45, 12.07s/it] 13%|█▎        | 127/1000 [25:36<2:55:26, 12.06s/it] 13%|█▎        | 128/1000 [25:48<2:55:19, 12.06s/it] 13%|█▎        | 129/1000 [26:00<2:55:21, 12.08s/it] 13%|█▎        | 130/1000 [26:12<2:55:13, 12.08s/it]                                                    {'loss': 0.1353, 'learning_rate': 0.0174, 'epoch': 4.46}
+ 13%|█▎        | 130/1000 [26:12<2:55:13, 12.08s/it] 13%|█▎        | 131/1000 [26:24<2:55:04, 12.09s/it] 13%|█▎        | 132/1000 [26:36<2:54:57, 12.09s/it] 13%|█▎        | 133/1000 [26:48<2:54:51, 12.10s/it] 13%|█▎        | 134/1000 [27:00<2:54:57, 12.12s/it] 14%|█▎        | 135/1000 [27:12<2:54:46, 12.12s/it] 14%|█▎        | 136/1000 [27:25<2:54:32, 12.12s/it] 14%|█▎        | 137/1000 [27:37<2:54:22, 12.12s/it] 14%|█▍        | 138/1000 [27:49<2:54:21, 12.14s/it] 14%|█▍        | 139/1000 [28:01<2:54:18, 12.15s/it] 14%|█▍        | 140/1000 [28:13<2:54:06, 12.15s/it]                                                    {'loss': 0.1287, 'learning_rate': 0.0172, 'epoch': 4.81}
+ 14%|█▍        | 140/1000 [28:13<2:54:06, 12.15s/it] 14%|█▍        | 141/1000 [28:25<2:53:43, 12.13s/it] 14%|█▍        | 142/1000 [28:37<2:53:38, 12.14s/it] 14%|█▍        | 143/1000 [28:50<2:53:28, 12.15s/it] 14%|█▍        | 144/1000 [29:02<2:53:11, 12.14s/it] 14%|█▍        | 145/1000 [29:14<2:53:02, 12.14s/it] 15%|█▍        | 146/1000 [29:26<2:52:49, 12.14s/it] 15%|█▍        | 147/1000 [29:38<2:52:35, 12.14s/it] 15%|█▍        | 148/1000 [29:50<2:52:30, 12.15s/it] 15%|█▍        | 149/1000 [30:03<2:52:25, 12.16s/it] 15%|█▌        | 150/1000 [30:15<2:52:11, 12.15s/it]                                                    {'loss': 0.1323, 'learning_rate': 0.017, 'epoch': 5.15}
+ 15%|█▌        | 150/1000 [30:15<2:52:11, 12.15s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-11 23:05:07,847 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-150/config.json
+[INFO|configuration_utils.py:364] 2024-03-11 23:05:07,847 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-150/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-11 23:05:07,868 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-150/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-11 23:05:07,869 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-150/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-11 23:05:07,869 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-150/special_tokens_map.json
+ 15%|█▌        | 151/1000 [30:27<2:52:14, 12.17s/it] 15%|█▌        | 152/1000 [30:39<2:52:05, 12.18s/it] 15%|█▌        | 153/1000 [30:51<2:51:42, 12.16s/it] 15%|█▌        | 154/1000 [31:03<2:51:31, 12.17s/it] 16%|█▌        | 155/1000 [31:16<2:51:14, 12.16s/it] 16%|█▌        | 156/1000 [31:28<2:50:55, 12.15s/it] 16%|█▌        | 157/1000 [31:40<2:50:44, 12.15s/it] 16%|█▌        | 158/1000 [31:52<2:50:27, 12.15s/it] 16%|█▌        | 159/1000 [32:04<2:50:18, 12.15s/it] 16%|█▌        | 160/1000 [32:16<2:50:05, 12.15s/it]                                                    {'loss': 0.1186, 'learning_rate': 0.0168, 'epoch': 5.49}
+ 16%|█▌        | 160/1000 [32:16<2:50:05, 12.15s/it] 16%|█▌        | 161/1000 [32:28<2:49:57, 12.15s/it] 16%|█▌        | 162/1000 [32:41<2:49:41, 12.15s/it] 16%|█▋        | 163/1000 [32:53<2:49:27, 12.15s/it] 16%|█▋        | 164/1000 [33:05<2:49:15, 12.15s/it] 16%|█▋        | 165/1000 [33:17<2:49:07, 12.15s/it] 17%|█▋        | 166/1000 [33:29<2:48:58, 12.16s/it] 17%|█▋        | 167/1000 [33:41<2:48:46, 12.16s/it] 17%|█▋        | 168/1000 [33:54<2:48:42, 12.17s/it] 17%|█▋        | 169/1000 [34:06<2:48:24, 12.16s/it] 17%|█▋        | 170/1000 [34:18<2:48:17, 12.17s/it]                                                    {'loss': 0.1173, 'learning_rate': 0.0166, 'epoch': 5.84}
+ 17%|█▋        | 170/1000 [34:18<2:48:17, 12.17s/it] 17%|█▋        | 171/1000 [34:30<2:48:00, 12.16s/it] 17%|█▋        | 172/1000 [34:42<2:47:37, 12.15s/it] 17%|█▋        | 173/1000 [34:54<2:47:19, 12.14s/it] 17%|█▋        | 174/1000 [35:06<2:46:53, 12.12s/it] 18%|█▊        | 175/1000 [35:18<2:46:36, 12.12s/it] 18%|█▊        | 176/1000 [35:30<2:46:12, 12.10s/it] 18%|█▊        | 177/1000 [35:43<2:45:57, 12.10s/it] 18%|█▊        | 178/1000 [35:55<2:45:43, 12.10s/it] 18%|█▊        | 179/1000 [36:07<2:45:31, 12.10s/it] 18%|█▊        | 180/1000 [36:19<2:45:21, 12.10s/it]                                                    {'loss': 0.1172, 'learning_rate': 0.016399999999999998, 'epoch': 6.18}
+ 18%|█▊        | 180/1000 [36:19<2:45:21, 12.10s/it] 18%|█▊        | 181/1000 [36:31<2:45:04, 12.09s/it] 18%|█▊        | 182/1000 [36:43<2:44:49, 12.09s/it] 18%|█▊        | 183/1000 [36:55<2:44:32, 12.08s/it] 18%|█▊        | 184/1000 [37:07<2:44:17, 12.08s/it] 18%|█▊        | 185/1000 [37:19<2:44:05, 12.08s/it] 19%|█▊        | 186/1000 [37:31<2:43:56, 12.08s/it] 19%|█▊        | 187/1000 [37:43<2:43:43, 12.08s/it] 19%|█▉        | 188/1000 [37:55<2:43:24, 12.07s/it] 19%|█▉        | 189/1000 [38:08<2:43:12, 12.07s/it] 19%|█▉        | 190/1000 [38:20<2:43:00, 12.07s/it]                                                    {'loss': 0.106, 'learning_rate': 0.016200000000000003, 'epoch': 6.52}
+ 19%|█▉        | 190/1000 [38:20<2:43:00, 12.07s/it] 19%|█▉        | 191/1000 [38:32<2:42:56, 12.08s/it] 19%|█▉        | 192/1000 [38:44<2:42:51, 12.09s/it] 19%|█▉        | 193/1000 [38:56<2:42:42, 12.10s/it] 19%|█▉        | 194/1000 [39:08<2:42:43, 12.11s/it] 20%|█▉        | 195/1000 [39:20<2:42:32, 12.11s/it] 20%|█▉        | 196/1000 [39:32<2:42:17, 12.11s/it] 20%|█▉        | 197/1000 [39:44<2:42:02, 12.11s/it] 20%|█▉        | 198/1000 [39:57<2:41:49, 12.11s/it] 20%|█▉        | 199/1000 [40:09<2:41:36, 12.11s/it] 20%|██        | 200/1000 [40:21<2:41:26, 12.11s/it]                                                    {'loss': 0.1166, 'learning_rate': 0.016, 'epoch': 6.87}
+ 20%|██        | 200/1000 [40:21<2:41:26, 12.11s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-11 23:15:13,922 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-200/config.json
+[INFO|configuration_utils.py:364] 2024-03-11 23:15:13,923 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-200/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-11 23:15:13,941 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-200/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-11 23:15:13,942 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-200/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-11 23:15:13,942 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-200/special_tokens_map.json
+ 20%|██        | 201/1000 [40:33<2:41:30, 12.13s/it] 20%|██        | 202/1000 [40:45<2:41:07, 12.11s/it] 20%|██        | 203/1000 [40:57<2:40:49, 12.11s/it] 20%|██        | 204/1000 [41:09<2:40:33, 12.10s/it] 20%|██        | 205/1000 [41:21<2:40:15, 12.10s/it] 21%|██        | 206/1000 [41:33<2:40:02, 12.09s/it] 21%|██        | 207/1000 [41:45<2:39:47, 12.09s/it] 21%|██        | 208/1000 [41:58<2:39:32, 12.09s/it] 21%|██        | 209/1000 [42:10<2:39:20, 12.09s/it] 21%|██        | 210/1000 [42:22<2:39:04, 12.08s/it]                                                    {'loss': 0.1097, 'learning_rate': 0.0158, 'epoch': 7.21}
+ 21%|██        | 210/1000 [42:22<2:39:04, 12.08s/it] 21%|██        | 211/1000 [42:34<2:38:51, 12.08s/it] 21%|██        | 212/1000 [42:46<2:38:41, 12.08s/it] 21%|██▏       | 213/1000 [42:58<2:38:27, 12.08s/it] 21%|██▏       | 214/1000 [43:10<2:38:17, 12.08s/it] 22%|██▏       | 215/1000 [43:22<2:38:05, 12.08s/it] 22%|██▏       | 216/1000 [43:34<2:37:51, 12.08s/it] 22%|██▏       | 217/1000 [43:46<2:37:41, 12.08s/it] 22%|██▏       | 218/1000 [43:58<2:37:36, 12.09s/it] 22%|██▏       | 219/1000 [44:10<2:37:24, 12.09s/it] 22%|██▏       | 220/1000 [44:23<2:37:22, 12.11s/it]                                                    {'loss': 0.105, 'learning_rate': 0.015600000000000001, 'epoch': 7.55}
+ 22%|██▏       | 220/1000 [44:23<2:37:22, 12.11s/it] 22%|██▏       | 221/1000 [44:35<2:37:12, 12.11s/it] 22%|██▏       | 222/1000 [44:47<2:36:59, 12.11s/it] 22%|██▏       | 223/1000 [44:59<2:36:49, 12.11s/it] 22%|██▏       | 224/1000 [45:11<2:36:45, 12.12s/it] 22%|██▎       | 225/1000 [45:23<2:36:36, 12.12s/it] 23%|██▎       | 226/1000 [45:35<2:36:26, 12.13s/it] 23%|██▎       | 227/1000 [45:47<2:36:16, 12.13s/it] 23%|██▎       | 228/1000 [46:00<2:36:06, 12.13s/it] 23%|██▎       | 229/1000 [46:12<2:35:52, 12.13s/it] 23%|██▎       | 230/1000 [46:24<2:35:44, 12.14s/it]                                                    {'loss': 0.0985, 'learning_rate': 0.0154, 'epoch': 7.9}
+ 23%|██▎       | 230/1000 [46:24<2:35:44, 12.14s/it] 23%|██▎       | 231/1000 [46:36<2:35:39, 12.14s/it] 23%|██▎       | 232/1000 [46:48<2:35:23, 12.14s/it] 23%|██▎       | 233/1000 [47:00<2:35:06, 12.13s/it] 23%|██▎       | 234/1000 [47:12<2:35:00, 12.14s/it] 24%|██▎       | 235/1000 [47:25<2:34:51, 12.15s/it] 24%|██▎       | 236/1000 [47:37<2:34:33, 12.14s/it] 24%|██▎       | 237/1000 [47:49<2:34:20, 12.14s/it] 24%|██▍       | 238/1000 [48:01<2:33:59, 12.13s/it] 24%|██▍       | 239/1000 [48:13<2:33:45, 12.12s/it] 24%|██▍       | 240/1000 [48:25<2:33:32, 12.12s/it]                                                    {'loss': 0.0932, 'learning_rate': 0.0152, 'epoch': 8.24}
+ 24%|██▍       | 240/1000 [48:25<2:33:32, 12.12s/it] 24%|██▍       | 241/1000 [48:37<2:33:28, 12.13s/it] 24%|██▍       | 242/1000 [48:49<2:33:11, 12.13s/it] 24%|██▍       | 243/1000 [49:02<2:33:00, 12.13s/it] 24%|██▍       | 244/1000 [49:14<2:32:59, 12.14s/it] 24%|██▍       | 245/1000 [49:26<2:32:40, 12.13s/it] 25%|██▍       | 246/1000 [49:38<2:32:25, 12.13s/it] 25%|██▍       | 247/1000 [49:50<2:32:16, 12.13s/it] 25%|██▍       | 248/1000 [50:02<2:32:01, 12.13s/it] 25%|██▍       | 249/1000 [50:14<2:31:54, 12.14s/it] 25%|██▌       | 250/1000 [50:27<2:31:44, 12.14s/it]                                                    {'loss': 0.0961, 'learning_rate': 0.015, 'epoch': 8.58}
+ 25%|██▌       | 250/1000 [50:27<2:31:44, 12.14s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-11 23:25:19,759 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-250/config.json
+[INFO|configuration_utils.py:364] 2024-03-11 23:25:19,760 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-250/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-11 23:25:19,777 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-250/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-11 23:25:19,778 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-250/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-11 23:25:19,778 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-250/special_tokens_map.json
+ 25%|██▌       | 251/1000 [50:39<2:32:03, 12.18s/it] 25%|██▌       | 252/1000 [50:51<2:31:42, 12.17s/it] 25%|██▌       | 253/1000 [51:03<2:31:27, 12.17s/it] 25%|██▌       | 254/1000 [51:15<2:31:08, 12.16s/it] 26%|██▌       | 255/1000 [51:27<2:30:53, 12.15s/it] 26%|██▌       | 256/1000 [51:40<2:30:38, 12.15s/it] 26%|██▌       | 257/1000 [51:52<2:30:28, 12.15s/it] 26%|██▌       | 258/1000 [52:04<2:30:11, 12.15s/it] 26%|██▌       | 259/1000 [52:16<2:29:55, 12.14s/it] 26%|██▌       | 260/1000 [52:28<2:29:35, 12.13s/it]                                                    {'loss': 0.0924, 'learning_rate': 0.0148, 'epoch': 8.93}
+ 26%|██▌       | 260/1000 [52:28<2:29:35, 12.13s/it] 26%|██▌       | 261/1000 [52:40<2:29:12, 12.11s/it] 26%|██▌       | 262/1000 [52:52<2:28:56, 12.11s/it] 26%|██▋       | 263/1000 [53:04<2:28:39, 12.10s/it] 26%|██▋       | 264/1000 [53:16<2:28:22, 12.10s/it] 26%|██▋       | 265/1000 [53:29<2:28:10, 12.10s/it] 27%|██▋       | 266/1000 [53:41<2:27:51, 12.09s/it] 27%|██▋       | 267/1000 [53:53<2:27:42, 12.09s/it] 27%|██▋       | 268/1000 [54:05<2:27:37, 12.10s/it] 27%|██▋       | 269/1000 [54:17<2:27:37, 12.12s/it] 27%|██▋       | 270/1000 [54:29<2:27:32, 12.13s/it]                                                    {'loss': 0.0866, 'learning_rate': 0.0146, 'epoch': 9.27}
+ 27%|██▋       | 270/1000 [54:29<2:27:32, 12.13s/it] 27%|██▋       | 271/1000 [54:41<2:27:35, 12.15s/it] 27%|██▋       | 272/1000 [54:53<2:27:25, 12.15s/it] 27%|██▋       | 273/1000 [55:06<2:27:13, 12.15s/it] 27%|██▋       | 274/1000 [55:18<2:27:04, 12.15s/it] 28%|██▊       | 275/1000 [55:30<2:26:50, 12.15s/it] 28%|██▊       | 276/1000 [55:42<2:26:37, 12.15s/it] 28%|██▊       | 277/1000 [55:54<2:26:24, 12.15s/it] 28%|██▊       | 278/1000 [56:06<2:26:15, 12.15s/it] 28%|██▊       | 279/1000 [56:19<2:26:03, 12.15s/it] 28%|██▊       | 280/1000 [56:31<2:25:52, 12.16s/it]                                                    {'loss': 0.0833, 'learning_rate': 0.0144, 'epoch': 9.61}
+ 28%|██▊       | 280/1000 [56:31<2:25:52, 12.16s/it] 28%|██▊       | 281/1000 [56:43<2:25:44, 12.16s/it] 28%|██▊       | 282/1000 [56:55<2:25:41, 12.17s/it] 28%|██▊       | 283/1000 [57:07<2:25:25, 12.17s/it] 28%|██▊       | 284/1000 [57:19<2:24:54, 12.14s/it] 28%|██▊       | 285/1000 [57:31<2:24:19, 12.11s/it] 29%|██▊       | 286/1000 [57:43<2:23:48, 12.08s/it] 29%|██▊       | 287/1000 [57:55<2:23:32, 12.08s/it] 29%|██▉       | 288/1000 [58:07<2:23:04, 12.06s/it] 29%|██▉       | 289/1000 [58:19<2:22:47, 12.05s/it] 29%|██▉       | 290/1000 [58:31<2:22:26, 12.04s/it]                                                    {'loss': 0.0857, 'learning_rate': 0.014199999999999999, 'epoch': 9.96}
+ 29%|██▉       | 290/1000 [58:31<2:22:26, 12.04s/it] 29%|██▉       | 291/1000 [58:44<2:22:12, 12.03s/it] 29%|██▉       | 292/1000 [58:56<2:21:52, 12.02s/it] 29%|██▉       | 293/1000 [59:08<2:21:36, 12.02s/it] 29%|██▉       | 294/1000 [59:20<2:21:25, 12.02s/it] 30%|██▉       | 295/1000 [59:32<2:21:12, 12.02s/it] 30%|██▉       | 296/1000 [59:44<2:20:59, 12.02s/it] 30%|██▉       | 297/1000 [59:56<2:20:54, 12.03s/it] 30%|██▉       | 298/1000 [1:00:08<2:20:49, 12.04s/it] 30%|██▉       | 299/1000 [1:00:20<2:20:27, 12.02s/it] 30%|███       | 300/1000 [1:00:32<2:20:14, 12.02s/it]                                                      {'loss': 0.0823, 'learning_rate': 0.013999999999999999, 'epoch': 10.3}
+ 30%|███       | 300/1000 [1:00:32<2:20:14, 12.02s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-11 23:35:24,879 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-300/config.json
+[INFO|configuration_utils.py:364] 2024-03-11 23:35:24,880 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-300/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-11 23:35:24,898 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-300/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-11 23:35:24,898 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-300/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-11 23:35:24,899 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-300/special_tokens_map.json
+ 30%|███       | 301/1000 [1:00:44<2:20:07, 12.03s/it] 30%|███       | 302/1000 [1:00:56<2:19:39, 12.01s/it] 30%|███       | 303/1000 [1:01:08<2:19:31, 12.01s/it] 30%|███       | 304/1000 [1:01:20<2:19:11, 12.00s/it] 30%|███       | 305/1000 [1:01:32<2:19:14, 12.02s/it] 31%|███       | 306/1000 [1:01:44<2:19:03, 12.02s/it] 31%|███       | 307/1000 [1:01:56<2:18:48, 12.02s/it] 31%|███       | 308/1000 [1:02:08<2:18:36, 12.02s/it] 31%|███       | 309/1000 [1:02:20<2:18:18, 12.01s/it] 31%|███       | 310/1000 [1:02:32<2:18:05, 12.01s/it]                                                      {'loss': 0.0777, 'learning_rate': 0.0138, 'epoch': 10.64}
+ 31%|███       | 310/1000 [1:02:32<2:18:05, 12.01s/it] 31%|███       | 311/1000 [1:02:44<2:17:53, 12.01s/it] 31%|███       | 312/1000 [1:02:56<2:17:41, 12.01s/it] 31%|███▏      | 313/1000 [1:03:08<2:17:24, 12.00s/it] 31%|███▏      | 314/1000 [1:03:20<2:17:13, 12.00s/it] 32%|███▏      | 315/1000 [1:03:32<2:17:02, 12.00s/it] 32%|███▏      | 316/1000 [1:03:44<2:17:02, 12.02s/it] 32%|███▏      | 317/1000 [1:03:56<2:16:50, 12.02s/it] 32%|███▏      | 318/1000 [1:04:08<2:16:39, 12.02s/it] 32%|███▏      | 319/1000 [1:04:20<2:16:20, 12.01s/it] 32%|███▏      | 320/1000 [1:04:32<2:16:17, 12.03s/it]                                                      {'loss': 0.0776, 'learning_rate': 0.013600000000000001, 'epoch': 10.99}
+ 32%|███▏      | 320/1000 [1:04:32<2:16:17, 12.03s/it] 32%|███▏      | 321/1000 [1:04:44<2:16:06, 12.03s/it] 32%|███▏      | 322/1000 [1:04:56<2:15:50, 12.02s/it] 32%|███▏      | 323/1000 [1:05:08<2:15:41, 12.03s/it] 32%|███▏      | 324/1000 [1:05:20<2:15:26, 12.02s/it] 32%|███▎      | 325/1000 [1:05:32<2:15:18, 12.03s/it] 33%|███▎      | 326/1000 [1:05:44<2:15:04, 12.02s/it] 33%|███▎      | 327/1000 [1:05:56<2:14:55, 12.03s/it] 33%|███▎      | 328/1000 [1:06:08<2:14:48, 12.04s/it] 33%|███▎      | 329/1000 [1:06:20<2:14:47, 12.05s/it] 33%|███▎      | 330/1000 [1:06:32<2:14:29, 12.04s/it]                                                      {'loss': 0.0749, 'learning_rate': 0.0134, 'epoch': 11.33}
+ 33%|███▎      | 330/1000 [1:06:32<2:14:29, 12.04s/it] 33%|███▎      | 331/1000 [1:06:44<2:14:18, 12.05s/it] 33%|███▎      | 332/1000 [1:06:56<2:14:09, 12.05s/it] 33%|███▎      | 333/1000 [1:07:08<2:14:00, 12.06s/it] 33%|███▎      | 334/1000 [1:07:21<2:13:51, 12.06s/it] 34%|███▎      | 335/1000 [1:07:33<2:13:36, 12.05s/it] 34%|███▎      | 336/1000 [1:07:45<2:13:14, 12.04s/it] 34%|███▎      | 337/1000 [1:07:57<2:12:56, 12.03s/it] 34%|███▍      | 338/1000 [1:08:09<2:12:39, 12.02s/it] 34%|███▍      | 339/1000 [1:08:21<2:12:28, 12.03s/it] 34%|███▍      | 340/1000 [1:08:33<2:12:07, 12.01s/it]                                                      {'loss': 0.0713, 'learning_rate': 0.013200000000000002, 'epoch': 11.67}
+ 34%|███▍      | 340/1000 [1:08:33<2:12:07, 12.01s/it] 34%|███▍      | 341/1000 [1:08:45<2:11:50, 12.00s/it] 34%|███▍      | 342/1000 [1:08:57<2:11:37, 12.00s/it] 34%|███▍      | 343/1000 [1:09:09<2:11:26, 12.00s/it] 34%|███▍      | 344/1000 [1:09:21<2:11:15, 12.01s/it] 34%|███▍      | 345/1000 [1:09:33<2:11:20, 12.03s/it] 35%|███▍      | 346/1000 [1:09:45<2:11:27, 12.06s/it] 35%|███▍      | 347/1000 [1:09:57<2:11:28, 12.08s/it] 35%|███▍      | 348/1000 [1:10:09<2:11:10, 12.07s/it] 35%|███▍      | 349/1000 [1:10:21<2:11:06, 12.08s/it] 35%|███▌      | 350/1000 [1:10:33<2:10:54, 12.08s/it]                                                      {'loss': 0.0753, 'learning_rate': 0.013000000000000001, 'epoch': 12.02}
+ 35%|███▌      | 350/1000 [1:10:33<2:10:54, 12.08s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-11 23:45:26,439 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-350/config.json
+[INFO|configuration_utils.py:364] 2024-03-11 23:45:26,440 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-350/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-11 23:45:26,459 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-350/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-11 23:45:26,459 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-350/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-11 23:45:26,460 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-350/special_tokens_map.json
+ 35%|███▌      | 351/1000 [1:10:45<2:10:51, 12.10s/it] 35%|███▌      | 352/1000 [1:10:57<2:10:34, 12.09s/it] 35%|███▌      | 353/1000 [1:11:10<2:10:30, 12.10s/it] 35%|███▌      | 354/1000 [1:11:22<2:09:58, 12.07s/it] 36%|███▌      | 355/1000 [1:11:34<2:09:52, 12.08s/it] 36%|███▌      | 356/1000 [1:11:46<2:09:34, 12.07s/it] 36%|███▌      | 357/1000 [1:11:58<2:09:09, 12.05s/it] 36%|███▌      | 358/1000 [1:12:10<2:09:01, 12.06s/it] 36%|███▌      | 359/1000 [1:12:22<2:08:39, 12.04s/it] 36%|███▌      | 360/1000 [1:12:34<2:08:39, 12.06s/it]                                                      {'loss': 0.0666, 'learning_rate': 0.0128, 'epoch': 12.36}
+ 36%|███▌      | 360/1000 [1:12:34<2:08:39, 12.06s/it] 36%|███▌      | 361/1000 [1:12:46<2:08:52, 12.10s/it] 36%|███▌      | 362/1000 [1:12:58<2:08:38, 12.10s/it] 36%|███▋      | 363/1000 [1:13:10<2:08:33, 12.11s/it] 36%|███▋      | 364/1000 [1:13:22<2:08:31, 12.13s/it] 36%|███▋      | 365/1000 [1:13:34<2:07:49, 12.08s/it] 37%|███▋      | 366/1000 [1:13:47<2:07:29, 12.07s/it] 37%|███▋      | 367/1000 [1:13:59<2:07:08, 12.05s/it] 37%|███▋      | 368/1000 [1:14:11<2:06:58, 12.05s/it] 37%|███▋      | 369/1000 [1:14:23<2:06:46, 12.05s/it] 37%|███▋      | 370/1000 [1:14:35<2:06:27, 12.04s/it]                                                      {'loss': 0.0688, 'learning_rate': 0.0126, 'epoch': 12.7}
+ 37%|███▋      | 370/1000 [1:14:35<2:06:27, 12.04s/it] 37%|███▋      | 371/1000 [1:14:47<2:06:03, 12.02s/it] 37%|███▋      | 372/1000 [1:14:59<2:05:47, 12.02s/it] 37%|███▋      | 373/1000 [1:15:11<2:05:36, 12.02s/it] 37%|███▋      | 374/1000 [1:15:23<2:05:55, 12.07s/it] 38%|███▊      | 375/1000 [1:15:35<2:05:57, 12.09s/it] 38%|███▊      | 376/1000 [1:15:47<2:05:31, 12.07s/it] 38%|███▊      | 377/1000 [1:15:59<2:05:37, 12.10s/it] 38%|███▊      | 378/1000 [1:16:11<2:05:12, 12.08s/it] 38%|███▊      | 379/1000 [1:16:23<2:04:45, 12.05s/it] 38%|███▊      | 380/1000 [1:16:35<2:04:19, 12.03s/it]                                                      {'loss': 0.0698, 'learning_rate': 0.0124, 'epoch': 13.05}
+ 38%|███▊      | 380/1000 [1:16:35<2:04:19, 12.03s/it] 38%|███▊      | 381/1000 [1:16:47<2:04:16, 12.05s/it] 38%|███▊      | 382/1000 [1:17:00<2:04:41, 12.11s/it] 38%|███▊      | 383/1000 [1:17:11<2:04:05, 12.07s/it] 38%|███▊      | 384/1000 [1:17:24<2:03:54, 12.07s/it] 38%|███▊      | 385/1000 [1:17:36<2:03:38, 12.06s/it] 39%|███▊      | 386/1000 [1:17:48<2:03:28, 12.07s/it] 39%|███▊      | 387/1000 [1:18:00<2:03:24, 12.08s/it] 39%|███▉      | 388/1000 [1:18:12<2:03:34, 12.11s/it] 39%|███▉      | 389/1000 [1:18:24<2:03:11, 12.10s/it] 39%|███▉      | 390/1000 [1:18:36<2:02:53, 12.09s/it]                                                      {'loss': 0.0623, 'learning_rate': 0.0122, 'epoch': 13.39}
+ 39%|███▉      | 390/1000 [1:18:36<2:02:53, 12.09s/it] 39%|███▉      | 391/1000 [1:18:48<2:02:50, 12.10s/it] 39%|███▉      | 392/1000 [1:19:00<2:02:54, 12.13s/it] 39%|███▉      | 393/1000 [1:19:12<2:02:23, 12.10s/it] 39%|███▉      | 394/1000 [1:19:25<2:02:08, 12.09s/it] 40%|███▉      | 395/1000 [1:19:37<2:01:55, 12.09s/it] 40%|███▉      | 396/1000 [1:19:49<2:01:51, 12.11s/it] 40%|███▉      | 397/1000 [1:20:01<2:02:12, 12.16s/it] 40%|███▉      | 398/1000 [1:20:13<2:01:51, 12.14s/it] 40%|███▉      | 399/1000 [1:20:25<2:01:33, 12.14s/it] 40%|████      | 400/1000 [1:20:37<2:00:56, 12.09s/it]                                                      {'loss': 0.0628, 'learning_rate': 0.012, 'epoch': 13.73}
+ 40%|████      | 400/1000 [1:20:37<2:00:56, 12.09s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-11 23:55:30,497 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-400/config.json
+[INFO|configuration_utils.py:364] 2024-03-11 23:55:30,498 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-400/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-11 23:55:30,519 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-400/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-11 23:55:30,519 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-400/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-11 23:55:30,520 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-400/special_tokens_map.json
+ 40%|████      | 401/1000 [1:20:50<2:01:11, 12.14s/it] 40%|████      | 402/1000 [1:21:02<2:00:45, 12.12s/it] 40%|████      | 403/1000 [1:21:14<2:00:22, 12.10s/it] 40%|████      | 404/1000 [1:21:26<2:00:05, 12.09s/it] 40%|████      | 405/1000 [1:21:38<2:00:06, 12.11s/it] 41%|████      | 406/1000 [1:21:50<1:59:44, 12.10s/it] 41%|████      | 407/1000 [1:22:02<1:59:22, 12.08s/it] 41%|████      | 408/1000 [1:22:14<1:58:58, 12.06s/it] 41%|████      | 409/1000 [1:22:26<1:58:50, 12.06s/it] 41%|████      | 410/1000 [1:22:38<1:58:48, 12.08s/it]                                                      {'loss': 0.0624, 'learning_rate': 0.0118, 'epoch': 14.08}
+ 41%|████      | 410/1000 [1:22:38<1:58:48, 12.08s/it] 41%|████      | 411/1000 [1:22:50<1:58:55, 12.11s/it] 41%|████      | 412/1000 [1:23:02<1:58:29, 12.09s/it] 41%|████▏     | 413/1000 [1:23:14<1:58:12, 12.08s/it] 41%|████▏     | 414/1000 [1:23:27<1:58:17, 12.11s/it] 42%|████▏     | 415/1000 [1:23:39<1:58:04, 12.11s/it] 42%|████▏     | 416/1000 [1:23:51<1:57:37, 12.08s/it] 42%|████▏     | 417/1000 [1:24:03<1:57:15, 12.07s/it] 42%|████▏     | 418/1000 [1:24:15<1:56:52, 12.05s/it] 42%|████▏     | 419/1000 [1:24:27<1:56:32, 12.03s/it] 42%|████▏     | 420/1000 [1:24:39<1:56:13, 12.02s/it]                                                      {'loss': 0.0558, 'learning_rate': 0.0116, 'epoch': 14.42}
+ 42%|████▏     | 420/1000 [1:24:39<1:56:13, 12.02s/it] 42%|████▏     | 421/1000 [1:24:51<1:55:59, 12.02s/it] 42%|████▏     | 422/1000 [1:25:03<1:55:43, 12.01s/it] 42%|████▏     | 423/1000 [1:25:15<1:55:26, 12.00s/it] 42%|████▏     | 424/1000 [1:25:27<1:55:08, 11.99s/it] 42%|████▎     | 425/1000 [1:25:39<1:54:56, 11.99s/it] 43%|████▎     | 426/1000 [1:25:51<1:54:41, 11.99s/it] 43%|████▎     | 427/1000 [1:26:03<1:54:30, 11.99s/it] 43%|████▎     | 428/1000 [1:26:15<1:54:19, 11.99s/it] 43%|████▎     | 429/1000 [1:26:27<1:54:07, 11.99s/it] 43%|████▎     | 430/1000 [1:26:39<1:53:56, 11.99s/it]                                                      {'loss': 0.0618, 'learning_rate': 0.011399999999999999, 'epoch': 14.76}
+ 43%|████▎     | 430/1000 [1:26:39<1:53:56, 11.99s/it] 43%|████▎     | 431/1000 [1:26:51<1:53:41, 11.99s/it] 43%|████▎     | 432/1000 [1:27:03<1:53:26, 11.98s/it] 43%|████▎     | 433/1000 [1:27:15<1:53:16, 11.99s/it] 43%|████▎     | 434/1000 [1:27:27<1:53:11, 12.00s/it] 44%|████▎     | 435/1000 [1:27:39<1:52:47, 11.98s/it] 44%|████▎     | 436/1000 [1:27:51<1:52:30, 11.97s/it] 44%|████▎     | 437/1000 [1:28:03<1:52:15, 11.96s/it] 44%|████▍     | 438/1000 [1:28:14<1:52:00, 11.96s/it] 44%|████▍     | 439/1000 [1:28:26<1:51:47, 11.96s/it] 44%|████▍     | 440/1000 [1:28:38<1:51:42, 11.97s/it]                                                      {'loss': 0.0575, 'learning_rate': 0.011200000000000002, 'epoch': 15.11}
+ 44%|████▍     | 440/1000 [1:28:38<1:51:42, 11.97s/it] 44%|████▍     | 441/1000 [1:28:50<1:51:30, 11.97s/it] 44%|████▍     | 442/1000 [1:29:02<1:51:13, 11.96s/it] 44%|████▍     | 443/1000 [1:29:14<1:50:53, 11.94s/it] 44%|████▍     | 444/1000 [1:29:26<1:50:38, 11.94s/it] 44%|████▍     | 445/1000 [1:29:38<1:50:33, 11.95s/it] 45%|████▍     | 446/1000 [1:29:50<1:50:17, 11.95s/it] 45%|████▍     | 447/1000 [1:30:02<1:50:03, 11.94s/it] 45%|████▍     | 448/1000 [1:30:14<1:49:53, 11.95s/it] 45%|████▍     | 449/1000 [1:30:26<1:49:47, 11.96s/it] 45%|████▌     | 450/1000 [1:30:38<1:49:42, 11.97s/it]                                                      {'loss': 0.0553, 'learning_rate': 0.011000000000000001, 'epoch': 15.45}
+ 45%|████▌     | 450/1000 [1:30:38<1:49:42, 11.97s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 00:05:31,129 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-450/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 00:05:31,129 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-450/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 00:05:31,141 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-450/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 00:05:31,142 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-450/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 00:05:31,142 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-450/special_tokens_map.json
+ 45%|████▌     | 451/1000 [1:30:50<1:49:34, 11.98s/it] 45%|████▌     | 452/1000 [1:31:02<1:49:20, 11.97s/it] 45%|████▌     | 453/1000 [1:31:14<1:49:07, 11.97s/it] 45%|████▌     | 454/1000 [1:31:26<1:48:56, 11.97s/it] 46%|████▌     | 455/1000 [1:31:38<1:48:42, 11.97s/it] 46%|████▌     | 456/1000 [1:31:50<1:48:29, 11.97s/it] 46%|████▌     | 457/1000 [1:32:02<1:48:17, 11.97s/it] 46%|████▌     | 458/1000 [1:32:14<1:48:08, 11.97s/it] 46%|████▌     | 459/1000 [1:32:26<1:47:55, 11.97s/it] 46%|████▌     | 460/1000 [1:32:38<1:47:41, 11.97s/it]                                                      {'loss': 0.0556, 'learning_rate': 0.0108, 'epoch': 15.79}
+ 46%|████▌     | 460/1000 [1:32:38<1:47:41, 11.97s/it] 46%|████▌     | 461/1000 [1:32:50<1:47:27, 11.96s/it] 46%|████▌     | 462/1000 [1:33:02<1:48:09, 12.06s/it] 46%|████▋     | 463/1000 [1:33:14<1:47:48, 12.05s/it] 46%|████▋     | 464/1000 [1:33:26<1:47:30, 12.03s/it] 46%|████▋     | 465/1000 [1:33:38<1:47:11, 12.02s/it] 47%|████▋     | 466/1000 [1:33:50<1:46:59, 12.02s/it] 47%|████▋     | 467/1000 [1:34:02<1:46:44, 12.02s/it] 47%|████▋     | 468/1000 [1:34:14<1:46:27, 12.01s/it] 47%|████▋     | 469/1000 [1:34:26<1:46:11, 12.00s/it] 47%|████▋     | 470/1000 [1:34:38<1:46:06, 12.01s/it]                                                      {'loss': 0.0525, 'learning_rate': 0.0106, 'epoch': 16.14}
+ 47%|████▋     | 470/1000 [1:34:38<1:46:06, 12.01s/it] 47%|████▋     | 471/1000 [1:34:50<1:46:07, 12.04s/it] 47%|████▋     | 472/1000 [1:35:02<1:46:01, 12.05s/it] 47%|████▋     | 473/1000 [1:35:14<1:45:58, 12.07s/it] 47%|████▋     | 474/1000 [1:35:26<1:45:52, 12.08s/it] 48%|████▊     | 475/1000 [1:35:38<1:45:50, 12.10s/it] 48%|████▊     | 476/1000 [1:35:51<1:45:48, 12.12s/it] 48%|████▊     | 477/1000 [1:36:03<1:45:41, 12.13s/it] 48%|████▊     | 478/1000 [1:36:15<1:45:52, 12.17s/it] 48%|████▊     | 479/1000 [1:36:27<1:45:41, 12.17s/it] 48%|████▊     | 480/1000 [1:36:39<1:45:26, 12.17s/it]                                                      {'loss': 0.0513, 'learning_rate': 0.010400000000000001, 'epoch': 16.48}
+ 48%|████▊     | 480/1000 [1:36:39<1:45:26, 12.17s/it] 48%|████▊     | 481/1000 [1:36:52<1:45:50, 12.24s/it] 48%|████▊     | 482/1000 [1:37:04<1:45:25, 12.21s/it] 48%|████▊     | 483/1000 [1:37:21<1:57:35, 13.65s/it] 48%|████▊     | 484/1000 [1:37:47<2:28:39, 17.29s/it] 48%|████▊     | 485/1000 [1:38:13<2:50:40, 19.88s/it] 49%|████▊     | 486/1000 [1:38:38<3:05:42, 21.68s/it] 49%|████▊     | 487/1000 [1:39:04<3:15:34, 22.88s/it] 49%|████▉     | 488/1000 [1:39:30<3:22:11, 23.69s/it] 49%|████▉     | 489/1000 [1:39:55<3:26:17, 24.22s/it] 49%|████▉     | 490/1000 [1:40:21<3:28:56, 24.58s/it]                                                      {'loss': 0.0508, 'learning_rate': 0.0102, 'epoch': 16.82}
+ 49%|████▉     | 490/1000 [1:40:21<3:28:56, 24.58s/it] 49%|████▉     | 491/1000 [1:40:46<3:30:25, 24.81s/it] 49%|████▉     | 492/1000 [1:41:11<3:31:18, 24.96s/it] 49%|████▉     | 493/1000 [1:41:37<3:31:50, 25.07s/it] 49%|████▉     | 494/1000 [1:42:02<3:31:57, 25.13s/it] 50%|████▉     | 495/1000 [1:42:27<3:31:58, 25.18s/it] 50%|████▉     | 496/1000 [1:42:52<3:31:50, 25.22s/it] 50%|████▉     | 497/1000 [1:43:18<3:31:02, 25.17s/it] 50%|████▉     | 498/1000 [1:43:43<3:30:56, 25.21s/it] 50%|████▉     | 499/1000 [1:44:08<3:30:33, 25.22s/it] 50%|█████     | 500/1000 [1:44:33<3:30:14, 25.23s/it]                                                      {'loss': 0.0511, 'learning_rate': 0.01, 'epoch': 17.17}
+ 50%|█████     | 500/1000 [1:44:33<3:30:14, 25.23s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 00:19:26,554 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-500/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 00:19:26,555 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-500/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 00:19:26,575 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-500/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 00:19:26,575 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-500/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 00:19:26,576 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-500/special_tokens_map.json
+ 50%|█████     | 501/1000 [1:44:59<3:30:18, 25.29s/it] 50%|█████     | 502/1000 [1:45:24<3:29:43, 25.27s/it] 50%|█████     | 503/1000 [1:45:49<3:29:23, 25.28s/it] 50%|█████     | 504/1000 [1:46:15<3:28:54, 25.27s/it] 50%|█████     | 505/1000 [1:46:40<3:28:24, 25.26s/it] 51%|█████     | 506/1000 [1:47:05<3:28:05, 25.27s/it] 51%|█████     | 507/1000 [1:47:30<3:27:28, 25.25s/it] 51%|█████     | 508/1000 [1:47:56<3:27:00, 25.24s/it] 51%|█████     | 509/1000 [1:48:21<3:26:40, 25.25s/it] 51%|█████     | 510/1000 [1:48:46<3:25:57, 25.22s/it]                                                      {'loss': 0.0493, 'learning_rate': 0.0098, 'epoch': 17.51}
+ 51%|█████     | 510/1000 [1:48:46<3:25:57, 25.22s/it] 51%|█████     | 511/1000 [1:49:11<3:25:44, 25.24s/it] 51%|█████     | 512/1000 [1:49:36<3:25:08, 25.22s/it] 51%|█████▏    | 513/1000 [1:50:02<3:24:47, 25.23s/it] 51%|█████▏    | 514/1000 [1:50:27<3:24:02, 25.19s/it] 52%|█████▏    | 515/1000 [1:50:52<3:23:39, 25.20s/it] 52%|█████▏    | 516/1000 [1:51:17<3:23:18, 25.20s/it] 52%|█████▏    | 517/1000 [1:51:42<3:23:01, 25.22s/it] 52%|█████▏    | 518/1000 [1:52:08<3:22:52, 25.25s/it] 52%|█████▏    | 519/1000 [1:52:33<3:22:36, 25.27s/it] 52%|█████▏    | 520/1000 [1:52:58<3:22:03, 25.26s/it]                                                      {'loss': 0.0483, 'learning_rate': 0.0096, 'epoch': 17.85}
+ 52%|█████▏    | 520/1000 [1:52:58<3:22:03, 25.26s/it] 52%|█████▏    | 521/1000 [1:53:24<3:21:47, 25.28s/it] 52%|█████▏    | 522/1000 [1:53:49<3:21:25, 25.28s/it] 52%|█████▏    | 523/1000 [1:54:14<3:21:01, 25.29s/it] 52%|█████▏    | 524/1000 [1:54:40<3:20:35, 25.29s/it] 52%|█████▎    | 525/1000 [1:55:05<3:20:12, 25.29s/it] 53%|█████▎    | 526/1000 [1:55:30<3:19:48, 25.29s/it] 53%|█████▎    | 527/1000 [1:55:55<3:19:12, 25.27s/it] 53%|█████▎    | 528/1000 [1:56:21<3:19:00, 25.30s/it] 53%|█████▎    | 529/1000 [1:56:46<3:18:21, 25.27s/it] 53%|█████▎    | 530/1000 [1:57:11<3:18:08, 25.29s/it]                                                      {'loss': 0.0469, 'learning_rate': 0.0094, 'epoch': 18.2}
+ 53%|█████▎    | 530/1000 [1:57:11<3:18:08, 25.29s/it] 53%|█████▎    | 531/1000 [1:57:37<3:17:49, 25.31s/it] 53%|█████▎    | 532/1000 [1:58:02<3:17:19, 25.30s/it] 53%|█████▎    | 533/1000 [1:58:27<3:16:49, 25.29s/it] 53%|█████▎    | 534/1000 [1:58:52<3:16:15, 25.27s/it] 54%|█████▎    | 535/1000 [1:59:18<3:15:54, 25.28s/it] 54%|█████▎    | 536/1000 [1:59:43<3:15:27, 25.27s/it] 54%|█████▎    | 537/1000 [2:00:08<3:15:06, 25.28s/it] 54%|█████▍    | 538/1000 [2:00:33<3:14:32, 25.27s/it] 54%|█████▍    | 539/1000 [2:00:59<3:14:09, 25.27s/it] 54%|█████▍    | 540/1000 [2:01:24<3:13:47, 25.28s/it]                                                      {'loss': 0.0462, 'learning_rate': 0.0092, 'epoch': 18.54}
+ 54%|█████▍    | 540/1000 [2:01:24<3:13:47, 25.28s/it] 54%|█████▍    | 541/1000 [2:01:49<3:13:22, 25.28s/it] 54%|█████▍    | 542/1000 [2:02:15<3:12:59, 25.28s/it] 54%|█████▍    | 543/1000 [2:02:40<3:12:30, 25.28s/it] 54%|█████▍    | 544/1000 [2:03:05<3:11:57, 25.26s/it] 55%|█████▍    | 545/1000 [2:03:30<3:11:31, 25.26s/it] 55%|█████▍    | 546/1000 [2:03:56<3:11:11, 25.27s/it] 55%|█████▍    | 547/1000 [2:04:21<3:10:36, 25.25s/it] 55%|█████▍    | 548/1000 [2:04:46<3:10:05, 25.23s/it] 55%|█████▍    | 549/1000 [2:05:11<3:09:31, 25.21s/it] 55%|█████▌    | 550/1000 [2:05:36<3:09:13, 25.23s/it]                                                      {'loss': 0.0456, 'learning_rate': 0.009000000000000001, 'epoch': 18.88}
+ 55%|█████▌    | 550/1000 [2:05:36<3:09:13, 25.23s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 00:40:29,655 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-550/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 00:40:29,655 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-550/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 00:40:29,674 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-550/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 00:40:29,674 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-550/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 00:40:29,675 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-550/special_tokens_map.json
+ 55%|█████▌    | 551/1000 [2:06:02<3:09:03, 25.26s/it] 55%|█████▌    | 552/1000 [2:06:27<3:08:30, 25.25s/it] 55%|█████▌    | 553/1000 [2:06:52<3:08:07, 25.25s/it] 55%|█████▌    | 554/1000 [2:07:18<3:08:01, 25.29s/it] 56%|█████▌    | 555/1000 [2:07:43<3:07:47, 25.32s/it] 56%|█████▌    | 556/1000 [2:08:08<3:07:28, 25.33s/it] 56%|█████▌    | 557/1000 [2:08:34<3:07:11, 25.35s/it] 56%|█████▌    | 558/1000 [2:08:59<3:06:50, 25.36s/it] 56%|█████▌    | 559/1000 [2:09:25<3:06:29, 25.37s/it] 56%|█████▌    | 560/1000 [2:09:50<3:06:09, 25.39s/it]                                                      {'loss': 0.0423, 'learning_rate': 0.0088, 'epoch': 19.23}
+ 56%|█████▌    | 560/1000 [2:09:50<3:06:09, 25.39s/it] 56%|█████▌    | 561/1000 [2:10:15<3:05:57, 25.41s/it] 56%|█████▌    | 562/1000 [2:10:41<3:05:25, 25.40s/it] 56%|█████▋    | 563/1000 [2:11:06<3:05:13, 25.43s/it] 56%|█████▋    | 564/1000 [2:11:32<3:04:48, 25.43s/it] 56%|█████▋    | 565/1000 [2:11:57<3:04:25, 25.44s/it] 57%|█████▋    | 566/1000 [2:12:23<3:04:06, 25.45s/it] 57%|█████▋    | 567/1000 [2:12:48<3:03:50, 25.47s/it] 57%|█████▋    | 568/1000 [2:13:14<3:03:32, 25.49s/it] 57%|█████▋    | 569/1000 [2:13:39<3:03:05, 25.49s/it] 57%|█████▋    | 570/1000 [2:14:05<3:02:48, 25.51s/it]                                                      {'loss': 0.0461, 'learning_rate': 0.0086, 'epoch': 19.57}
+ 57%|█████▋    | 570/1000 [2:14:05<3:02:48, 25.51s/it] 57%|█████▋    | 571/1000 [2:14:30<3:02:25, 25.52s/it] 57%|█████▋    | 572/1000 [2:14:56<3:02:03, 25.52s/it] 57%|█████▋    | 573/1000 [2:15:21<3:01:23, 25.49s/it] 57%|█████▋    | 574/1000 [2:15:47<3:00:54, 25.48s/it] 57%|█████▊    | 575/1000 [2:16:12<3:00:22, 25.46s/it] 58%|█████▊    | 576/1000 [2:16:38<2:59:50, 25.45s/it] 58%|█████▊    | 577/1000 [2:17:03<2:59:16, 25.43s/it] 58%|█████▊    | 578/1000 [2:17:28<2:58:55, 25.44s/it] 58%|█████▊    | 579/1000 [2:17:54<2:58:31, 25.44s/it] 58%|█████▊    | 580/1000 [2:18:19<2:58:11, 25.46s/it]                                                      {'loss': 0.0453, 'learning_rate': 0.0084, 'epoch': 19.91}
+ 58%|█████▊    | 580/1000 [2:18:19<2:58:11, 25.46s/it] 58%|█████▊    | 581/1000 [2:18:45<2:57:45, 25.45s/it] 58%|█████▊    | 582/1000 [2:19:10<2:57:24, 25.47s/it] 58%|█████▊    | 583/1000 [2:19:36<2:57:24, 25.53s/it] 58%|█████▊    | 584/1000 [2:20:02<2:57:52, 25.65s/it] 58%|█████▊    | 585/1000 [2:20:28<2:58:10, 25.76s/it] 59%|█████▊    | 586/1000 [2:20:54<2:58:13, 25.83s/it] 59%|█████▊    | 587/1000 [2:21:20<2:58:14, 25.89s/it] 59%|█████▉    | 588/1000 [2:21:46<2:58:05, 25.94s/it] 59%|█████▉    | 589/1000 [2:22:12<2:57:40, 25.94s/it] 59%|█████▉    | 590/1000 [2:22:38<2:56:42, 25.86s/it]                                                      {'loss': 0.0417, 'learning_rate': 0.008199999999999999, 'epoch': 20.26}
+ 59%|█████▉    | 590/1000 [2:22:38<2:56:42, 25.86s/it] 59%|█████▉    | 591/1000 [2:23:03<2:55:17, 25.71s/it] 59%|█████▉    | 592/1000 [2:23:28<2:53:48, 25.56s/it] 59%|█████▉    | 593/1000 [2:23:54<2:53:04, 25.51s/it] 59%|█████▉    | 594/1000 [2:24:19<2:52:22, 25.47s/it] 60%|█████▉    | 595/1000 [2:24:44<2:51:27, 25.40s/it] 60%|█████▉    | 596/1000 [2:25:10<2:50:45, 25.36s/it] 60%|█████▉    | 597/1000 [2:25:35<2:50:05, 25.32s/it] 60%|█████▉    | 598/1000 [2:26:00<2:49:37, 25.32s/it] 60%|█████▉    | 599/1000 [2:26:25<2:49:09, 25.31s/it] 60%|██████    | 600/1000 [2:26:51<2:48:43, 25.31s/it]                                                      {'loss': 0.0422, 'learning_rate': 0.008, 'epoch': 20.6}
+ 60%|██████    | 600/1000 [2:26:51<2:48:43, 25.31s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 01:01:43,864 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-600/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 01:01:43,865 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-600/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 01:01:43,885 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-600/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 01:01:43,886 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-600/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 01:01:43,886 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-600/special_tokens_map.json
+ 60%|██████    | 601/1000 [2:27:16<2:48:24, 25.32s/it] 60%|██████    | 602/1000 [2:27:41<2:48:00, 25.33s/it] 60%|██████    | 603/1000 [2:28:07<2:47:35, 25.33s/it] 60%|██████    | 604/1000 [2:28:32<2:47:10, 25.33s/it] 60%|██████    | 605/1000 [2:28:57<2:46:48, 25.34s/it] 61%|██████    | 606/1000 [2:29:23<2:46:15, 25.32s/it] 61%|██████    | 607/1000 [2:29:48<2:45:53, 25.33s/it] 61%|██████    | 608/1000 [2:30:13<2:45:19, 25.30s/it] 61%|██████    | 609/1000 [2:30:39<2:44:59, 25.32s/it] 61%|██████    | 610/1000 [2:31:04<2:44:46, 25.35s/it]                                                      {'loss': 0.0396, 'learning_rate': 0.0078000000000000005, 'epoch': 20.94}
+ 61%|██████    | 610/1000 [2:31:04<2:44:46, 25.35s/it] 61%|██████    | 611/1000 [2:31:29<2:44:12, 25.33s/it] 61%|██████    | 612/1000 [2:31:55<2:43:52, 25.34s/it] 61%|██████▏   | 613/1000 [2:32:20<2:43:19, 25.32s/it] 61%|██████▏   | 614/1000 [2:32:45<2:43:00, 25.34s/it] 62%|██████▏   | 615/1000 [2:33:11<2:42:28, 25.32s/it] 62%|██████▏   | 616/1000 [2:33:36<2:42:02, 25.32s/it] 62%|██████▏   | 617/1000 [2:34:01<2:41:30, 25.30s/it] 62%|██████▏   | 618/1000 [2:34:27<2:41:17, 25.33s/it] 62%|██████▏   | 619/1000 [2:34:52<2:40:41, 25.31s/it] 62%|██████▏   | 620/1000 [2:35:17<2:40:14, 25.30s/it]                                                      {'loss': 0.0398, 'learning_rate': 0.0076, 'epoch': 21.29}
+ 62%|██████▏   | 620/1000 [2:35:17<2:40:14, 25.30s/it] 62%|██████▏   | 621/1000 [2:35:42<2:39:57, 25.32s/it] 62%|██████▏   | 622/1000 [2:36:08<2:39:29, 25.32s/it] 62%|██████▏   | 623/1000 [2:36:33<2:39:02, 25.31s/it] 62%|██████▏   | 624/1000 [2:36:58<2:38:36, 25.31s/it] 62%|██████▎   | 625/1000 [2:37:24<2:38:13, 25.32s/it] 63%|██████▎   | 626/1000 [2:37:49<2:37:45, 25.31s/it] 63%|██████▎   | 627/1000 [2:38:14<2:37:17, 25.30s/it] 63%|██████▎   | 628/1000 [2:38:40<2:36:45, 25.28s/it] 63%|██████▎   | 629/1000 [2:39:05<2:36:31, 25.31s/it] 63%|██████▎   | 630/1000 [2:39:30<2:35:59, 25.30s/it]                                                      {'loss': 0.0393, 'learning_rate': 0.0074, 'epoch': 21.63}
+ 63%|██████▎   | 630/1000 [2:39:30<2:35:59, 25.30s/it] 63%|██████▎   | 631/1000 [2:39:55<2:35:25, 25.27s/it] 63%|██████▎   | 632/1000 [2:40:21<2:35:04, 25.28s/it] 63%|██████▎   | 633/1000 [2:40:46<2:34:37, 25.28s/it] 63%|██████▎   | 634/1000 [2:41:11<2:34:13, 25.28s/it] 64%|██████▎   | 635/1000 [2:41:37<2:33:45, 25.28s/it] 64%|██████▎   | 636/1000 [2:42:02<2:33:25, 25.29s/it] 64%|██████▎   | 637/1000 [2:42:27<2:33:03, 25.30s/it] 64%|██████▍   | 638/1000 [2:42:52<2:32:37, 25.30s/it] 64%|██████▍   | 639/1000 [2:43:18<2:31:59, 25.26s/it] 64%|██████▍   | 640/1000 [2:43:43<2:31:45, 25.29s/it]                                                      {'loss': 0.0385, 'learning_rate': 0.0072, 'epoch': 21.97}
+ 64%|██████▍   | 640/1000 [2:43:43<2:31:45, 25.29s/it] 64%|██████▍   | 641/1000 [2:44:08<2:31:24, 25.31s/it] 64%|██████▍   | 642/1000 [2:44:34<2:31:08, 25.33s/it] 64%|██████▍   | 643/1000 [2:44:59<2:30:36, 25.31s/it] 64%|██████▍   | 644/1000 [2:45:24<2:30:17, 25.33s/it] 64%|██████▍   | 645/1000 [2:45:50<2:29:42, 25.30s/it] 65%|██████▍   | 646/1000 [2:46:15<2:29:18, 25.31s/it] 65%|██████▍   | 647/1000 [2:46:40<2:28:56, 25.32s/it] 65%|██████▍   | 648/1000 [2:47:06<2:28:33, 25.32s/it] 65%|██████▍   | 649/1000 [2:47:31<2:28:12, 25.33s/it] 65%|██████▌   | 650/1000 [2:47:56<2:27:42, 25.32s/it]                                                      {'loss': 0.0364, 'learning_rate': 0.006999999999999999, 'epoch': 22.32}
+ 65%|██████▌   | 650/1000 [2:47:56<2:27:42, 25.32s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 01:22:49,483 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-650/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 01:22:49,484 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-650/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 01:22:49,504 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-650/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 01:22:49,504 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-650/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 01:22:49,505 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-650/special_tokens_map.json
+ 65%|██████▌   | 651/1000 [2:48:22<2:27:22, 25.34s/it] 65%|██████▌   | 652/1000 [2:48:43<2:20:01, 24.14s/it] 65%|██████▌   | 653/1000 [2:48:55<1:58:34, 20.50s/it] 65%|██████▌   | 654/1000 [2:49:07<1:43:32, 17.95s/it] 66%|██████▌   | 655/1000 [2:49:19<1:32:59, 16.17s/it] 66%|██████▌   | 656/1000 [2:49:31<1:25:31, 14.92s/it] 66%|██████▌   | 657/1000 [2:49:43<1:20:17, 14.04s/it] 66%|██████▌   | 658/1000 [2:49:55<1:16:33, 13.43s/it] 66%|██████▌   | 659/1000 [2:50:07<1:13:53, 13.00s/it] 66%|██████▌   | 660/1000 [2:50:19<1:11:56, 12.70s/it]                                                      {'loss': 0.0368, 'learning_rate': 0.0068000000000000005, 'epoch': 22.66}
+ 66%|██████▌   | 660/1000 [2:50:19<1:11:56, 12.70s/it] 66%|██████▌   | 661/1000 [2:50:31<1:10:32, 12.48s/it] 66%|██████▌   | 662/1000 [2:50:43<1:09:28, 12.33s/it] 66%|██████▋   | 663/1000 [2:50:55<1:08:45, 12.24s/it] 66%|██████▋   | 664/1000 [2:51:07<1:08:10, 12.17s/it] 66%|██████▋   | 665/1000 [2:51:19<1:07:40, 12.12s/it] 67%|██████▋   | 666/1000 [2:51:31<1:07:14, 12.08s/it] 67%|██████▋   | 667/1000 [2:51:43<1:06:51, 12.05s/it] 67%|██████▋   | 668/1000 [2:51:55<1:06:32, 12.03s/it] 67%|██████▋   | 669/1000 [2:52:07<1:06:13, 12.00s/it] 67%|██████▋   | 670/1000 [2:52:19<1:05:55, 11.99s/it]                                                      {'loss': 0.0376, 'learning_rate': 0.006600000000000001, 'epoch': 23.0}
+ 67%|██████▋   | 670/1000 [2:52:19<1:05:55, 11.99s/it] 67%|██████▋   | 671/1000 [2:52:31<1:05:43, 11.99s/it] 67%|██████▋   | 672/1000 [2:52:43<1:05:30, 11.98s/it] 67%|██████▋   | 673/1000 [2:52:55<1:05:17, 11.98s/it] 67%|██████▋   | 674/1000 [2:53:07<1:05:08, 11.99s/it] 68%|██████▊   | 675/1000 [2:53:19<1:04:58, 12.00s/it] 68%|██████▊   | 676/1000 [2:53:31<1:04:47, 12.00s/it] 68%|██████▊   | 677/1000 [2:53:43<1:04:36, 12.00s/it] 68%|██████▊   | 678/1000 [2:53:55<1:04:26, 12.01s/it] 68%|██████▊   | 679/1000 [2:54:07<1:04:14, 12.01s/it] 68%|██████▊   | 680/1000 [2:54:19<1:04:05, 12.02s/it]                                                      {'loss': 0.0345, 'learning_rate': 0.0064, 'epoch': 23.35}
+ 68%|██████▊   | 680/1000 [2:54:19<1:04:05, 12.02s/it] 68%|██████▊   | 681/1000 [2:54:31<1:03:54, 12.02s/it] 68%|██████▊   | 682/1000 [2:54:43<1:03:38, 12.01s/it] 68%|██████▊   | 683/1000 [2:54:55<1:03:25, 12.01s/it] 68%|██████▊   | 684/1000 [2:55:07<1:03:12, 12.00s/it] 68%|██████▊   | 685/1000 [2:55:19<1:02:59, 12.00s/it] 69%|██████▊   | 686/1000 [2:55:31<1:02:43, 11.99s/it] 69%|██████▊   | 687/1000 [2:55:43<1:02:33, 11.99s/it] 69%|██████▉   | 688/1000 [2:55:55<1:02:22, 11.99s/it] 69%|██████▉   | 689/1000 [2:56:07<1:02:10, 12.00s/it] 69%|██████▉   | 690/1000 [2:56:19<1:01:58, 11.99s/it]                                                      {'loss': 0.0359, 'learning_rate': 0.0062, 'epoch': 23.69}
+ 69%|██████▉   | 690/1000 [2:56:19<1:01:58, 11.99s/it] 69%|██████▉   | 691/1000 [2:56:31<1:01:51, 12.01s/it] 69%|██████▉   | 692/1000 [2:56:43<1:01:42, 12.02s/it] 69%|██████▉   | 693/1000 [2:56:55<1:01:32, 12.03s/it] 69%|██████▉   | 694/1000 [2:57:07<1:01:23, 12.04s/it] 70%|██████▉   | 695/1000 [2:57:19<1:01:12, 12.04s/it] 70%|██████▉   | 696/1000 [2:57:31<1:00:59, 12.04s/it] 70%|██████▉   | 697/1000 [2:57:43<1:00:50, 12.05s/it] 70%|██████▉   | 698/1000 [2:57:55<1:00:40, 12.06s/it] 70%|██████▉   | 699/1000 [2:58:07<1:00:32, 12.07s/it] 70%|███████   | 700/1000 [2:58:19<1:00:24, 12.08s/it]                                                      {'loss': 0.0353, 'learning_rate': 0.006, 'epoch': 24.03}
+ 70%|███████   | 700/1000 [2:58:19<1:00:24, 12.08s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 01:33:12,664 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-700/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 01:33:12,665 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-700/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 01:33:12,683 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-700/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 01:33:12,683 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-700/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 01:33:12,684 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-700/special_tokens_map.json
+ 70%|███████   | 701/1000 [2:58:32<1:00:18, 12.10s/it] 70%|███████   | 702/1000 [2:58:44<1:00:04, 12.09s/it] 70%|███████   | 703/1000 [2:58:56<59:52, 12.09s/it]   70%|███████   | 704/1000 [2:59:08<59:37, 12.09s/it] 70%|███████   | 705/1000 [2:59:20<59:26, 12.09s/it] 71%|███████   | 706/1000 [2:59:32<59:16, 12.10s/it] 71%|███████   | 707/1000 [2:59:44<59:04, 12.10s/it] 71%|███████   | 708/1000 [2:59:56<58:51, 12.09s/it] 71%|███████   | 709/1000 [3:00:08<58:36, 12.09s/it] 71%|███████   | 710/1000 [3:00:20<58:26, 12.09s/it]                                                    {'loss': 0.0348, 'learning_rate': 0.0058, 'epoch': 24.38}
+ 71%|███████   | 710/1000 [3:00:20<58:26, 12.09s/it] 71%|███████   | 711/1000 [3:00:33<58:16, 12.10s/it] 71%|███████   | 712/1000 [3:00:45<58:06, 12.11s/it] 71%|███████▏  | 713/1000 [3:00:57<58:08, 12.16s/it] 71%|███████▏  | 714/1000 [3:01:09<57:51, 12.14s/it] 72%|███████▏  | 715/1000 [3:01:21<57:39, 12.14s/it] 72%|███████▏  | 716/1000 [3:01:33<57:27, 12.14s/it] 72%|███████▏  | 717/1000 [3:01:45<57:14, 12.14s/it] 72%|███████▏  | 718/1000 [3:01:58<57:07, 12.15s/it] 72%|███████▏  | 719/1000 [3:02:10<57:03, 12.18s/it] 72%|███████▏  | 720/1000 [3:02:22<56:57, 12.21s/it]                                                    {'loss': 0.0328, 'learning_rate': 0.005600000000000001, 'epoch': 24.72}
+ 72%|███████▏  | 720/1000 [3:02:22<56:57, 12.21s/it] 72%|███████▏  | 721/1000 [3:02:34<56:42, 12.20s/it] 72%|███████▏  | 722/1000 [3:02:47<56:34, 12.21s/it] 72%|███████▏  | 723/1000 [3:02:59<56:16, 12.19s/it] 72%|███████▏  | 724/1000 [3:03:11<56:01, 12.18s/it] 72%|███████▎  | 725/1000 [3:03:23<55:48, 12.18s/it] 73%|███████▎  | 726/1000 [3:03:35<55:34, 12.17s/it] 73%|███████▎  | 727/1000 [3:03:47<55:22, 12.17s/it] 73%|███████▎  | 728/1000 [3:03:59<55:08, 12.17s/it] 73%|███████▎  | 729/1000 [3:04:12<54:50, 12.14s/it] 73%|███████▎  | 730/1000 [3:04:24<54:34, 12.13s/it]                                                    {'loss': 0.0342, 'learning_rate': 0.0054, 'epoch': 25.06}
+ 73%|███████▎  | 730/1000 [3:04:24<54:34, 12.13s/it] 73%|███████▎  | 731/1000 [3:04:36<54:18, 12.11s/it] 73%|███████▎  | 732/1000 [3:04:48<54:01, 12.09s/it] 73%|███████▎  | 733/1000 [3:05:00<53:45, 12.08s/it] 73%|███████▎  | 734/1000 [3:05:12<53:28, 12.06s/it] 74%|███████▎  | 735/1000 [3:05:24<53:14, 12.05s/it] 74%|███████▎  | 736/1000 [3:05:36<52:57, 12.04s/it] 74%|███████▎  | 737/1000 [3:05:48<52:44, 12.03s/it] 74%|███████▍  | 738/1000 [3:06:00<52:29, 12.02s/it] 74%|███████▍  | 739/1000 [3:06:12<52:14, 12.01s/it] 74%|███████▍  | 740/1000 [3:06:24<51:59, 12.00s/it]                                                    {'loss': 0.03, 'learning_rate': 0.005200000000000001, 'epoch': 25.41}
+ 74%|███████▍  | 740/1000 [3:06:24<51:59, 12.00s/it] 74%|███████▍  | 741/1000 [3:06:36<51:47, 12.00s/it] 74%|███████▍  | 742/1000 [3:06:48<51:34, 11.99s/it] 74%|███████▍  | 743/1000 [3:07:00<51:21, 11.99s/it] 74%|███████▍  | 744/1000 [3:07:12<51:15, 12.01s/it] 74%|███████▍  | 745/1000 [3:07:24<51:02, 12.01s/it] 75%|███████▍  | 746/1000 [3:07:36<50:48, 12.00s/it] 75%|███████▍  | 747/1000 [3:07:48<50:37, 12.01s/it] 75%|███████▍  | 748/1000 [3:08:00<50:26, 12.01s/it] 75%|███████▍  | 749/1000 [3:08:12<50:14, 12.01s/it] 75%|███████▌  | 750/1000 [3:08:24<50:03, 12.01s/it]                                                    {'loss': 0.0313, 'learning_rate': 0.005, 'epoch': 25.75}
+ 75%|███████▌  | 750/1000 [3:08:24<50:03, 12.01s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 01:43:17,151 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-750/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 01:43:17,152 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-750/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 01:43:17,172 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-750/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 01:43:17,173 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-750/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 01:43:17,173 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-750/special_tokens_map.json
+ 75%|███████▌  | 751/1000 [3:08:36<49:52, 12.02s/it] 75%|███████▌  | 752/1000 [3:08:48<49:34, 11.99s/it] 75%|███████▌  | 753/1000 [3:09:00<49:18, 11.98s/it] 75%|███████▌  | 754/1000 [3:09:12<49:03, 11.96s/it] 76%|███████▌  | 755/1000 [3:09:24<48:48, 11.95s/it] 76%|███████▌  | 756/1000 [3:09:36<48:38, 11.96s/it] 76%|███████▌  | 757/1000 [3:09:48<48:25, 11.96s/it] 76%|███████▌  | 758/1000 [3:10:00<48:12, 11.95s/it] 76%|███████▌  | 759/1000 [3:10:12<47:59, 11.95s/it] 76%|███████▌  | 760/1000 [3:10:24<47:53, 11.97s/it]                                                    {'loss': 0.0343, 'learning_rate': 0.0048, 'epoch': 26.09}
+ 76%|███████▌  | 760/1000 [3:10:24<47:53, 11.97s/it] 76%|███████▌  | 761/1000 [3:10:35<47:38, 11.96s/it] 76%|███████▌  | 762/1000 [3:10:47<47:26, 11.96s/it] 76%|███████▋  | 763/1000 [3:10:59<47:13, 11.96s/it] 76%|███████▋  | 764/1000 [3:11:11<47:02, 11.96s/it] 76%|███████▋  | 765/1000 [3:11:23<46:49, 11.95s/it] 77%|███████▋  | 766/1000 [3:11:35<46:36, 11.95s/it] 77%|███████▋  | 767/1000 [3:11:47<46:23, 11.94s/it] 77%|███████▋  | 768/1000 [3:11:59<46:10, 11.94s/it] 77%|███████▋  | 769/1000 [3:12:11<45:57, 11.94s/it] 77%|███████▋  | 770/1000 [3:12:23<45:48, 11.95s/it]                                                    {'loss': 0.0316, 'learning_rate': 0.0046, 'epoch': 26.44}
+ 77%|███████▋  | 770/1000 [3:12:23<45:48, 11.95s/it] 77%|███████▋  | 771/1000 [3:12:35<45:35, 11.94s/it] 77%|███████▋  | 772/1000 [3:12:47<45:22, 11.94s/it] 77%|███████▋  | 773/1000 [3:12:59<45:09, 11.94s/it] 77%|███████▋  | 774/1000 [3:13:11<44:56, 11.93s/it] 78%|███████▊  | 775/1000 [3:13:23<44:45, 11.93s/it] 78%|███████▊  | 776/1000 [3:13:35<44:33, 11.93s/it] 78%|███████▊  | 777/1000 [3:13:47<44:20, 11.93s/it] 78%|███████▊  | 778/1000 [3:13:58<44:08, 11.93s/it] 78%|███████▊  | 779/1000 [3:14:10<43:56, 11.93s/it] 78%|███████▊  | 780/1000 [3:14:22<43:47, 11.95s/it]                                                    {'loss': 0.0311, 'learning_rate': 0.0044, 'epoch': 26.78}
+ 78%|███████▊  | 780/1000 [3:14:22<43:47, 11.95s/it] 78%|███████▊  | 781/1000 [3:14:34<43:34, 11.94s/it] 78%|███████▊  | 782/1000 [3:14:46<43:23, 11.94s/it] 78%|███████▊  | 783/1000 [3:14:58<43:10, 11.94s/it] 78%|███████▊  | 784/1000 [3:15:10<42:58, 11.94s/it] 78%|███████▊  | 785/1000 [3:15:22<42:47, 11.94s/it] 79%|███████▊  | 786/1000 [3:15:34<42:35, 11.94s/it] 79%|███████▊  | 787/1000 [3:15:46<42:25, 11.95s/it] 79%|███████▉  | 788/1000 [3:15:58<42:12, 11.95s/it] 79%|███████▉  | 789/1000 [3:16:10<42:03, 11.96s/it] 79%|███████▉  | 790/1000 [3:16:22<41:50, 11.95s/it]                                                    {'loss': 0.0332, 'learning_rate': 0.0042, 'epoch': 27.12}
+ 79%|███████▉  | 790/1000 [3:16:22<41:50, 11.95s/it] 79%|███████▉  | 791/1000 [3:16:34<41:38, 11.96s/it] 79%|███████▉  | 792/1000 [3:16:46<41:26, 11.96s/it] 79%|███████▉  | 793/1000 [3:16:58<41:15, 11.96s/it] 79%|███████▉  | 794/1000 [3:17:10<41:03, 11.96s/it] 80%|███████▉  | 795/1000 [3:17:22<40:52, 11.96s/it] 80%|███████▉  | 796/1000 [3:17:34<40:40, 11.96s/it] 80%|███████▉  | 797/1000 [3:17:46<40:29, 11.97s/it] 80%|███████▉  | 798/1000 [3:17:58<40:20, 11.98s/it] 80%|███████▉  | 799/1000 [3:18:10<40:09, 11.99s/it] 80%|████████  | 800/1000 [3:18:22<39:59, 12.00s/it]                                                    {'loss': 0.0313, 'learning_rate': 0.004, 'epoch': 27.47}
+ 80%|████████  | 800/1000 [3:18:22<39:59, 12.00s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 01:53:14,828 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-800/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 01:53:14,829 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-800/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 01:53:14,847 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-800/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 01:53:14,847 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-800/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 01:53:14,848 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-800/special_tokens_map.json
+ 80%|████████  | 801/1000 [3:18:34<39:53, 12.03s/it] 80%|████████  | 802/1000 [3:18:46<39:41, 12.03s/it] 80%|████████  | 803/1000 [3:18:58<39:30, 12.03s/it] 80%|████████  | 804/1000 [3:19:10<39:19, 12.04s/it] 80%|████████  | 805/1000 [3:19:22<39:04, 12.03s/it] 81%|████████  | 806/1000 [3:19:34<38:52, 12.02s/it] 81%|████████  | 807/1000 [3:19:46<38:39, 12.02s/it] 81%|████████  | 808/1000 [3:19:58<38:28, 12.02s/it] 81%|████████  | 809/1000 [3:20:10<38:15, 12.02s/it] 81%|████████  | 810/1000 [3:20:22<38:03, 12.02s/it]                                                    {'loss': 0.0299, 'learning_rate': 0.0038, 'epoch': 27.81}
+ 81%|████████  | 810/1000 [3:20:22<38:03, 12.02s/it] 81%|████████  | 811/1000 [3:20:34<37:51, 12.02s/it] 81%|████████  | 812/1000 [3:20:46<37:41, 12.03s/it] 81%|████████▏ | 813/1000 [3:20:58<37:28, 12.02s/it] 81%|████████▏ | 814/1000 [3:21:10<37:15, 12.02s/it] 82%|████████▏ | 815/1000 [3:21:22<37:03, 12.02s/it] 82%|████████▏ | 816/1000 [3:21:34<36:53, 12.03s/it] 82%|████████▏ | 817/1000 [3:21:46<36:40, 12.02s/it] 82%|████████▏ | 818/1000 [3:21:58<36:27, 12.02s/it] 82%|████████▏ | 819/1000 [3:22:10<36:14, 12.01s/it] 82%|████████▏ | 820/1000 [3:22:22<36:02, 12.02s/it]                                                    {'loss': 0.0301, 'learning_rate': 0.0036, 'epoch': 28.15}
+ 82%|████████▏ | 820/1000 [3:22:22<36:02, 12.02s/it] 82%|████████▏ | 821/1000 [3:22:34<35:49, 12.01s/it] 82%|████████▏ | 822/1000 [3:22:46<35:36, 12.00s/it] 82%|████████▏ | 823/1000 [3:22:58<35:23, 12.00s/it] 82%|████████▏ | 824/1000 [3:23:10<35:12, 12.00s/it] 82%|████████▎ | 825/1000 [3:23:22<35:00, 12.01s/it] 83%|████████▎ | 826/1000 [3:23:34<34:48, 12.00s/it] 83%|████████▎ | 827/1000 [3:23:46<34:36, 12.00s/it] 83%|████████▎ | 828/1000 [3:23:58<34:24, 12.00s/it] 83%|████████▎ | 829/1000 [3:24:10<34:11, 12.00s/it] 83%|████████▎ | 830/1000 [3:24:22<34:00, 12.00s/it]                                                    {'loss': 0.031, 'learning_rate': 0.0034000000000000002, 'epoch': 28.5}
+ 83%|████████▎ | 830/1000 [3:24:22<34:00, 12.00s/it] 83%|████████▎ | 831/1000 [3:24:34<33:48, 12.00s/it] 83%|████████▎ | 832/1000 [3:24:46<33:36, 12.00s/it] 83%|████████▎ | 833/1000 [3:24:58<33:24, 12.01s/it] 83%|████████▎ | 834/1000 [3:25:10<33:12, 12.00s/it] 84%|████████▎ | 835/1000 [3:25:22<33:02, 12.02s/it] 84%|████████▎ | 836/1000 [3:25:34<32:48, 12.00s/it] 84%|████████▎ | 837/1000 [3:25:46<32:35, 11.99s/it] 84%|████████▍ | 838/1000 [3:25:58<32:23, 12.00s/it] 84%|████████▍ | 839/1000 [3:26:10<32:12, 12.01s/it] 84%|████████▍ | 840/1000 [3:26:22<32:00, 12.00s/it]                                                    {'loss': 0.0293, 'learning_rate': 0.0032, 'epoch': 28.84}
+ 84%|████████▍ | 840/1000 [3:26:22<32:00, 12.00s/it] 84%|████████▍ | 841/1000 [3:26:34<31:48, 12.00s/it] 84%|████████▍ | 842/1000 [3:26:46<31:35, 12.00s/it] 84%|████████▍ | 843/1000 [3:26:58<31:26, 12.02s/it] 84%|████████▍ | 844/1000 [3:27:10<31:13, 12.01s/it] 84%|████████▍ | 845/1000 [3:27:22<31:03, 12.02s/it] 85%|████████▍ | 846/1000 [3:27:34<30:53, 12.04s/it] 85%|████████▍ | 847/1000 [3:27:46<30:39, 12.02s/it] 85%|████████▍ | 848/1000 [3:27:58<30:25, 12.01s/it] 85%|████████▍ | 849/1000 [3:28:10<30:13, 12.01s/it] 85%|████████▌ | 850/1000 [3:28:22<30:01, 12.01s/it]                                                    {'loss': 0.03, 'learning_rate': 0.003, 'epoch': 29.18}
+ 85%|████████▌ | 850/1000 [3:28:22<30:01, 12.01s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 02:03:15,536 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-850/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 02:03:15,537 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-850/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 02:03:15,557 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-850/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 02:03:15,558 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-850/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 02:03:15,558 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-850/special_tokens_map.json
+ 85%|████████▌ | 851/1000 [3:28:34<29:51, 12.03s/it] 85%|████████▌ | 852/1000 [3:28:46<29:35, 12.00s/it] 85%|████████▌ | 853/1000 [3:28:58<29:21, 11.98s/it] 85%|████████▌ | 854/1000 [3:29:10<29:06, 11.97s/it] 86%|████████▌ | 855/1000 [3:29:22<28:54, 11.96s/it] 86%|████████▌ | 856/1000 [3:29:34<28:41, 11.96s/it] 86%|████████▌ | 857/1000 [3:29:46<28:30, 11.96s/it] 86%|████████▌ | 858/1000 [3:29:58<28:23, 11.99s/it] 86%|████████▌ | 859/1000 [3:30:10<28:11, 11.99s/it] 86%|████████▌ | 860/1000 [3:30:22<27:57, 11.98s/it]                                                    {'loss': 0.0295, 'learning_rate': 0.0028000000000000004, 'epoch': 29.53}
+ 86%|████████▌ | 860/1000 [3:30:22<27:57, 11.98s/it] 86%|████████▌ | 861/1000 [3:30:34<27:44, 11.97s/it] 86%|████████▌ | 862/1000 [3:30:46<27:30, 11.96s/it] 86%|████████▋ | 863/1000 [3:30:58<27:18, 11.96s/it] 86%|████████▋ | 864/1000 [3:31:10<27:06, 11.96s/it] 86%|████████▋ | 865/1000 [3:31:22<26:55, 11.96s/it] 87%|████████▋ | 866/1000 [3:31:34<26:43, 11.97s/it] 87%|████████▋ | 867/1000 [3:31:46<26:30, 11.96s/it] 87%|████████▋ | 868/1000 [3:31:58<26:18, 11.96s/it] 87%|████████▋ | 869/1000 [3:32:10<26:07, 11.97s/it] 87%|████████▋ | 870/1000 [3:32:22<25:55, 11.96s/it]                                                    {'loss': 0.0287, 'learning_rate': 0.0026000000000000003, 'epoch': 29.87}
+ 87%|████████▋ | 870/1000 [3:32:22<25:55, 11.96s/it] 87%|████████▋ | 871/1000 [3:32:34<25:43, 11.97s/it] 87%|████████▋ | 872/1000 [3:32:46<25:31, 11.97s/it] 87%|████████▋ | 873/1000 [3:32:58<25:19, 11.97s/it] 87%|████████▋ | 874/1000 [3:33:10<25:09, 11.98s/it] 88%|████████▊ | 875/1000 [3:33:22<24:59, 12.00s/it] 88%|████████▊ | 876/1000 [3:33:34<24:48, 12.00s/it] 88%|████████▊ | 877/1000 [3:33:46<24:37, 12.01s/it] 88%|████████▊ | 878/1000 [3:33:58<24:27, 12.03s/it] 88%|████████▊ | 879/1000 [3:34:10<24:16, 12.03s/it] 88%|████████▊ | 880/1000 [3:34:22<24:04, 12.04s/it]                                                    {'loss': 0.0293, 'learning_rate': 0.0024, 'epoch': 30.21}
+ 88%|████████▊ | 880/1000 [3:34:22<24:04, 12.04s/it] 88%|████████▊ | 881/1000 [3:34:34<23:52, 12.04s/it] 88%|████████▊ | 882/1000 [3:34:46<23:41, 12.04s/it] 88%|████████▊ | 883/1000 [3:34:58<23:28, 12.04s/it] 88%|████████▊ | 884/1000 [3:35:10<23:16, 12.04s/it] 88%|████████▊ | 885/1000 [3:35:22<23:06, 12.05s/it] 89%|████████▊ | 886/1000 [3:35:34<22:54, 12.06s/it] 89%|████████▊ | 887/1000 [3:35:46<22:42, 12.05s/it] 89%|████████▉ | 888/1000 [3:35:58<22:30, 12.05s/it] 89%|████████▉ | 889/1000 [3:36:10<22:18, 12.06s/it] 89%|████████▉ | 890/1000 [3:36:22<22:06, 12.06s/it]                                                    {'loss': 0.0278, 'learning_rate': 0.0022, 'epoch': 30.56}
+ 89%|████████▉ | 890/1000 [3:36:22<22:06, 12.06s/it] 89%|████████▉ | 891/1000 [3:36:35<21:55, 12.07s/it] 89%|████████▉ | 892/1000 [3:36:47<21:44, 12.07s/it] 89%|████████▉ | 893/1000 [3:36:59<21:31, 12.07s/it] 89%|████████▉ | 894/1000 [3:37:11<21:19, 12.07s/it] 90%|████████▉ | 895/1000 [3:37:23<21:08, 12.08s/it] 90%|████████▉ | 896/1000 [3:37:35<20:57, 12.09s/it] 90%|████████▉ | 897/1000 [3:37:47<20:47, 12.11s/it] 90%|████████▉ | 898/1000 [3:37:59<20:34, 12.10s/it] 90%|████████▉ | 899/1000 [3:38:11<20:23, 12.11s/it] 90%|█████████ | 900/1000 [3:38:23<20:11, 12.11s/it]                                                    {'loss': 0.0299, 'learning_rate': 0.002, 'epoch': 30.9}
+ 90%|█████████ | 900/1000 [3:38:23<20:11, 12.11s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 02:13:16,630 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-900/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 02:13:16,630 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-900/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 02:13:16,643 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-900/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 02:13:16,644 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-900/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 02:13:16,658 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-900/special_tokens_map.json
+ 90%|█████████ | 901/1000 [3:38:36<20:01, 12.14s/it] 90%|█████████ | 902/1000 [3:38:48<19:49, 12.14s/it] 90%|█████████ | 903/1000 [3:39:00<19:38, 12.15s/it] 90%|█████████ | 904/1000 [3:39:12<19:27, 12.16s/it] 90%|█████████ | 905/1000 [3:39:24<19:14, 12.16s/it] 91%|█████████ | 906/1000 [3:39:36<19:02, 12.15s/it] 91%|█████████ | 907/1000 [3:39:49<18:49, 12.15s/it] 91%|█████████ | 908/1000 [3:40:01<18:37, 12.15s/it] 91%|█████████ | 909/1000 [3:40:13<18:25, 12.14s/it] 91%|█████████ | 910/1000 [3:40:25<18:12, 12.14s/it]                                                    {'loss': 0.027, 'learning_rate': 0.0018, 'epoch': 31.24}
+ 91%|█████████ | 910/1000 [3:40:25<18:12, 12.14s/it] 91%|█████████ | 911/1000 [3:40:37<18:01, 12.15s/it] 91%|█████████ | 912/1000 [3:40:49<17:49, 12.15s/it] 91%|█████████▏| 913/1000 [3:41:02<17:38, 12.16s/it] 91%|█████████▏| 914/1000 [3:41:14<17:23, 12.14s/it] 92%|█████████▏| 915/1000 [3:41:26<17:10, 12.12s/it] 92%|█████████▏| 916/1000 [3:41:38<16:56, 12.10s/it] 92%|█████████▏| 917/1000 [3:41:50<16:42, 12.08s/it] 92%|█████████▏| 918/1000 [3:42:02<16:29, 12.07s/it] 92%|█████████▏| 919/1000 [3:42:14<16:15, 12.04s/it] 92%|█████████▏| 920/1000 [3:42:26<16:02, 12.03s/it]                                                    {'loss': 0.0285, 'learning_rate': 0.0016, 'epoch': 31.59}
+ 92%|█████████▏| 920/1000 [3:42:26<16:02, 12.03s/it] 92%|█████████▏| 921/1000 [3:42:38<15:49, 12.01s/it] 92%|█████████▏| 922/1000 [3:42:50<15:36, 12.01s/it] 92%|█████████▏| 923/1000 [3:43:02<15:24, 12.00s/it] 92%|█████████▏| 924/1000 [3:43:14<15:11, 11.99s/it] 92%|█████████▎| 925/1000 [3:43:26<14:59, 11.99s/it] 93%|█████████▎| 926/1000 [3:43:38<14:47, 11.99s/it] 93%|█████████▎| 927/1000 [3:43:50<14:35, 11.99s/it] 93%|█████████▎| 928/1000 [3:44:02<14:23, 11.99s/it] 93%|█████████▎| 929/1000 [3:44:14<14:11, 11.99s/it] 93%|█████████▎| 930/1000 [3:44:26<13:58, 11.98s/it]                                                    {'loss': 0.0281, 'learning_rate': 0.0014000000000000002, 'epoch': 31.93}
+ 93%|█████████▎| 930/1000 [3:44:26<13:58, 11.98s/it] 93%|█████████▎| 931/1000 [3:44:38<13:46, 11.98s/it] 93%|█████████▎| 932/1000 [3:44:50<13:34, 11.98s/it] 93%|█████████▎| 933/1000 [3:45:02<13:23, 11.99s/it] 93%|█████████▎| 934/1000 [3:45:14<13:11, 11.99s/it] 94%|█████████▎| 935/1000 [3:45:26<12:59, 11.99s/it] 94%|█████████▎| 936/1000 [3:45:38<12:46, 11.98s/it] 94%|█████████▎| 937/1000 [3:45:50<12:35, 11.99s/it] 94%|█████████▍| 938/1000 [3:46:01<12:22, 11.98s/it] 94%|█████████▍| 939/1000 [3:46:13<12:10, 11.98s/it] 94%|█████████▍| 940/1000 [3:46:25<11:58, 11.98s/it]                                                    {'loss': 0.0279, 'learning_rate': 0.0012, 'epoch': 32.27}
+ 94%|█████████▍| 940/1000 [3:46:25<11:58, 11.98s/it] 94%|█████████▍| 941/1000 [3:46:37<11:46, 11.98s/it] 94%|█████████▍| 942/1000 [3:46:49<11:34, 11.98s/it] 94%|█████████▍| 943/1000 [3:47:01<11:22, 11.98s/it] 94%|█████████▍| 944/1000 [3:47:13<11:10, 11.98s/it] 94%|█████████▍| 945/1000 [3:47:25<10:58, 11.98s/it] 95%|█████████▍| 946/1000 [3:47:37<10:46, 11.97s/it] 95%|█████████▍| 947/1000 [3:47:49<10:34, 11.97s/it] 95%|█████████▍| 948/1000 [3:48:01<10:22, 11.98s/it] 95%|█████████▍| 949/1000 [3:48:13<10:11, 11.98s/it] 95%|█████████▌| 950/1000 [3:48:25<09:59, 11.98s/it]                                                    {'loss': 0.0266, 'learning_rate': 0.001, 'epoch': 32.62}
+ 95%|█████████▌| 950/1000 [3:48:25<09:59, 11.98s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 02:23:18,395 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-950/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 02:23:18,396 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-950/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 02:23:18,415 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-950/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 02:23:18,415 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-950/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 02:23:18,415 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-950/special_tokens_map.json
+ 95%|█████████▌| 951/1000 [3:48:37<09:47, 12.00s/it] 95%|█████████▌| 952/1000 [3:48:49<09:36, 12.02s/it] 95%|█████████▌| 953/1000 [3:49:01<09:24, 12.02s/it] 95%|█████████▌| 954/1000 [3:49:13<09:12, 12.00s/it] 96%|█████████▌| 955/1000 [3:49:25<08:59, 11.99s/it] 96%|█████████▌| 956/1000 [3:49:37<08:47, 11.98s/it] 96%|█████████▌| 957/1000 [3:49:49<08:35, 11.98s/it] 96%|█████████▌| 958/1000 [3:50:01<08:23, 12.00s/it] 96%|█████████▌| 959/1000 [3:50:13<08:11, 11.99s/it] 96%|█████████▌| 960/1000 [3:50:25<07:59, 11.99s/it]                                                    {'loss': 0.0269, 'learning_rate': 0.0008, 'epoch': 32.96}
+ 96%|█████████▌| 960/1000 [3:50:25<07:59, 11.99s/it] 96%|█████████▌| 961/1000 [3:50:37<07:47, 11.99s/it] 96%|█████████▌| 962/1000 [3:50:49<07:35, 11.98s/it] 96%|█████████▋| 963/1000 [3:51:01<07:23, 11.98s/it] 96%|█████████▋| 964/1000 [3:51:13<07:11, 11.98s/it] 96%|█████████▋| 965/1000 [3:51:25<06:59, 11.98s/it] 97%|█████████▋| 966/1000 [3:51:37<06:47, 11.98s/it] 97%|█████████▋| 967/1000 [3:51:49<06:35, 12.00s/it] 97%|█████████▋| 968/1000 [3:52:01<06:23, 12.00s/it] 97%|█████████▋| 969/1000 [3:52:13<06:12, 12.00s/it] 97%|█████████▋| 970/1000 [3:52:25<06:00, 12.01s/it]                                                    {'loss': 0.0258, 'learning_rate': 0.0006, 'epoch': 33.3}
+ 97%|█████████▋| 970/1000 [3:52:25<06:00, 12.01s/it] 97%|█████████▋| 971/1000 [3:52:37<05:48, 12.01s/it] 97%|█████████▋| 972/1000 [3:52:49<05:36, 12.01s/it] 97%|█████████▋| 973/1000 [3:53:01<05:24, 12.02s/it] 97%|█████████▋| 974/1000 [3:53:13<05:12, 12.02s/it] 98%|█████████▊| 975/1000 [3:53:25<05:00, 12.02s/it] 98%|█████████▊| 976/1000 [3:53:37<04:48, 12.03s/it] 98%|█████████▊| 977/1000 [3:53:49<04:36, 12.03s/it] 98%|█████████▊| 978/1000 [3:54:01<04:24, 12.03s/it] 98%|█████████▊| 979/1000 [3:54:13<04:12, 12.02s/it] 98%|█████████▊| 980/1000 [3:54:25<04:00, 12.03s/it]                                                    {'loss': 0.0265, 'learning_rate': 0.0004, 'epoch': 33.65}
+ 98%|█████████▊| 980/1000 [3:54:25<04:00, 12.03s/it] 98%|█████████▊| 981/1000 [3:54:37<03:48, 12.04s/it] 98%|█████████▊| 982/1000 [3:54:50<03:36, 12.04s/it] 98%|█████████▊| 983/1000 [3:55:02<03:24, 12.03s/it] 98%|█████████▊| 984/1000 [3:55:14<03:12, 12.03s/it] 98%|█████████▊| 985/1000 [3:55:26<03:00, 12.03s/it] 99%|█████████▊| 986/1000 [3:55:38<02:48, 12.02s/it] 99%|█████████▊| 987/1000 [3:55:50<02:36, 12.04s/it] 99%|█████████▉| 988/1000 [3:56:02<02:24, 12.03s/it] 99%|█████████▉| 989/1000 [3:56:14<02:12, 12.02s/it] 99%|█████████▉| 990/1000 [3:56:26<02:00, 12.02s/it]                                                    {'loss': 0.0268, 'learning_rate': 0.0002, 'epoch': 33.99}
+ 99%|█████████▉| 990/1000 [3:56:26<02:00, 12.02s/it] 99%|█████████▉| 991/1000 [3:56:38<01:48, 12.01s/it] 99%|█████████▉| 992/1000 [3:56:50<01:36, 12.01s/it] 99%|█████████▉| 993/1000 [3:57:02<01:24, 12.02s/it] 99%|█████████▉| 994/1000 [3:57:14<01:12, 12.01s/it]100%|█████████▉| 995/1000 [3:57:26<01:00, 12.00s/it]100%|█████████▉| 996/1000 [3:57:38<00:48, 12.02s/it]100%|█████████▉| 997/1000 [3:57:50<00:36, 12.01s/it]100%|█████████▉| 998/1000 [3:58:02<00:24, 12.02s/it]100%|█████████▉| 999/1000 [3:58:14<00:12, 12.02s/it]100%|██████████| 1000/1000 [3:58:26<00:00, 12.02s/it]                                                     {'loss': 0.0289, 'learning_rate': 0.0, 'epoch': 34.33}
+100%|██████████| 1000/1000 [3:58:26<00:00, 12.02s/it]Saving PrefixEncoder
+[INFO|configuration_utils.py:458] 2024-03-12 02:33:18,998 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-1000/config.json
+[INFO|configuration_utils.py:364] 2024-03-12 02:33:18,999 >> Configuration saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-1000/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-03-12 02:33:19,019 >> Model weights saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-1000/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-03-12 02:33:19,019 >> tokenizer config file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-1000/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-03-12 02:33:19,019 >> Special tokens file saved in output/scire_rawData20240311_2233/adgen-chatglm2-6b-32k-pt-128-2e-2/checkpoint-1000/special_tokens_map.json
+[INFO|trainer.py:2053] 2024-03-12 02:33:19,065 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                                     {'train_runtime': 14307.3137, 'train_samples_per_second': 4.473, 'train_steps_per_second': 0.07, 'train_loss': 0.0760830757021904, 'epoch': 34.33}
+100%|██████████| 1000/1000 [3:58:26<00:00, 12.02s/it]100%|██████████| 1000/1000 [3:58:26<00:00, 14.31s/it]
+***** train metrics *****
+  epoch                    =      34.33
+  train_loss               =     0.0761
+  train_runtime            = 3:58:27.31
+  train_samples            =       1861
+  train_samples_per_second =      4.473
+  train_steps_per_second   =       0.07

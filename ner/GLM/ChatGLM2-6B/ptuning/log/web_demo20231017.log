@@ -1,0 +1,147 @@
+[2023-10-17 14:29:06,066] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+Loading prefix_encoder weight from /data2/bowen2023/project1/output/network_center20231012_1404/adgen-chatglm2-6b-32k-pt-128-1e-2/checkpoint-450
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:09,  1.57s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:03<00:08,  1.62s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:04<00:06,  1.62s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:06<00:04,  1.56s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:07<00:03,  1.55s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:09<00:01,  1.54s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.33s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.46s/it]
+Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/xf2022/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /data/xf2022/projects/ChatGLM2-6B/ptuning/web_demo.py:167 in <module>        │
+│                                                                              │
+│   164                                                                        │
+│   165                                                                        │
+│   166 if __name__ == "__main__":                                             │
+│ ❱ 167 │   main()                                                             │
+│   168                                                                        │
+│                                                                              │
+│ /data/xf2022/projects/ChatGLM2-6B/ptuning/web_demo.py:156 in main            │
+│                                                                              │
+│   153 │   if model_args.quantization_bit is not None:                        │
+│   154 │   │   print(f"Quantized to {model_args.quantization_bit} bit")       │
+│   155 │   │   model = model.quantize(model_args.quantization_bit)            │
+│ ❱ 156 │   model = model.cuda()                                               │
+│   157 │   if model_args.pre_seq_len is not None:                             │
+│   158 │   │   # P-tuning v2                                                  │
+│   159 │   │   model.transformer.prefix_encoder.float()                       │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:905 in cuda                                                       │
+│                                                                              │
+│    902 │   │   Returns:                                                      │
+│    903 │   │   │   Module: self                                              │
+│    904 │   │   """                                                           │
+│ ❱  905 │   │   return self._apply(lambda t: t.cuda(device))                  │
+│    906 │                                                                     │
+│    907 │   def ipu(self: T, device: Optional[Union[int, device]] = None) ->  │
+│    908 │   │   r"""Moves all model parameters and buffers to the IPU.        │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:797 in _apply                                                     │
+│                                                                              │
+│    794 │                                                                     │
+│    795 │   def _apply(self, fn):                                             │
+│    796 │   │   for module in self.children():                                │
+│ ❱  797 │   │   │   module._apply(fn)                                         │
+│    798 │   │                                                                 │
+│    799 │   │   def compute_should_use_set_data(tensor, tensor_applied):      │
+│    800 │   │   │   if torch._has_compatible_shallow_copy_type(tensor, tensor │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:797 in _apply                                                     │
+│                                                                              │
+│    794 │                                                                     │
+│    795 │   def _apply(self, fn):                                             │
+│    796 │   │   for module in self.children():                                │
+│ ❱  797 │   │   │   module._apply(fn)                                         │
+│    798 │   │                                                                 │
+│    799 │   │   def compute_should_use_set_data(tensor, tensor_applied):      │
+│    800 │   │   │   if torch._has_compatible_shallow_copy_type(tensor, tensor │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:797 in _apply                                                     │
+│                                                                              │
+│    794 │                                                                     │
+│    795 │   def _apply(self, fn):                                             │
+│    796 │   │   for module in self.children():                                │
+│ ❱  797 │   │   │   module._apply(fn)                                         │
+│    798 │   │                                                                 │
+│    799 │   │   def compute_should_use_set_data(tensor, tensor_applied):      │
+│    800 │   │   │   if torch._has_compatible_shallow_copy_type(tensor, tensor │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:797 in _apply                                                     │
+│                                                                              │
+│    794 │                                                                     │
+│    795 │   def _apply(self, fn):                                             │
+│    796 │   │   for module in self.children():                                │
+│ ❱  797 │   │   │   module._apply(fn)                                         │
+│    798 │   │                                                                 │
+│    799 │   │   def compute_should_use_set_data(tensor, tensor_applied):      │
+│    800 │   │   │   if torch._has_compatible_shallow_copy_type(tensor, tensor │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:797 in _apply                                                     │
+│                                                                              │
+│    794 │                                                                     │
+│    795 │   def _apply(self, fn):                                             │
+│    796 │   │   for module in self.children():                                │
+│ ❱  797 │   │   │   module._apply(fn)                                         │
+│    798 │   │                                                                 │
+│    799 │   │   def compute_should_use_set_data(tensor, tensor_applied):      │
+│    800 │   │   │   if torch._has_compatible_shallow_copy_type(tensor, tensor │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:797 in _apply                                                     │
+│                                                                              │
+│    794 │                                                                     │
+│    795 │   def _apply(self, fn):                                             │
+│    796 │   │   for module in self.children():                                │
+│ ❱  797 │   │   │   module._apply(fn)                                         │
+│    798 │   │                                                                 │
+│    799 │   │   def compute_should_use_set_data(tensor, tensor_applied):      │
+│    800 │   │   │   if torch._has_compatible_shallow_copy_type(tensor, tensor │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:820 in _apply                                                     │
+│                                                                              │
+│    817 │   │   │   # track autograd history of `param_applied`, so we have t │
+│    818 │   │   │   # `with torch.no_grad():`                                 │
+│    819 │   │   │   with torch.no_grad():                                     │
+│ ❱  820 │   │   │   │   param_applied = fn(param)                             │
+│    821 │   │   │   should_use_set_data = compute_should_use_set_data(param,  │
+│    822 │   │   │   if should_use_set_data:                                   │
+│    823 │   │   │   │   param.data = param_applied                            │
+│                                                                              │
+│ /data/anaconda/envs/chatglm2_6b/lib/python3.8/site-packages/torch/nn/modules │
+│ /module.py:905 in <lambda>                                                   │
+│                                                                              │
+│    902 │   │   Returns:                                                      │
+│    903 │   │   │   Module: self                                              │
+│    904 │   │   """                                                           │
+│ ❱  905 │   │   return self._apply(lambda t: t.cuda(device))                  │
+│    906 │                                                                     │
+│    907 │   def ipu(self: T, device: Optional[Union[int, device]] = None) ->  │
+│    908 │   │   r"""Moves all model parameters and buffers to the IPU.        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OutOfMemoryError: CUDA out of memory. Tried to allocate 108.00 MiB (GPU 0; 23.70
+GiB total capacity; 9.92 GiB already allocated; 63.56 MiB free; 9.93 GiB 
+reserved in total by PyTorch) If reserved memory is >> allocated memory try 
+setting max_split_size_mb to avoid fragmentation.  See documentation for Memory 
+Management and PYTORCH_CUDA_ALLOC_CONF
+[2023-10-17 14:30:47,881] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+Loading prefix_encoder weight from /data2/bowen2023/project1/output/network_center20231012_1404/adgen-chatglm2-6b-32k-pt-128-1e-2/checkpoint-450
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:08,  1.46s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:03<00:07,  1.57s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:04<00:06,  1.56s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:06<00:04,  1.51s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:07<00:03,  1.57s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:09<00:01,  1.59s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.39s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.48s/it]
+Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/xf2022/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running on local URL:  http://127.0.0.1:7860
+
+To create a public link, set `share=True` in `launch()`.
+[2023-10-17 14:41:02,406] [INFO] [real_accelerator.py:110:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+Loading prefix_encoder weight from /data2/bowen2023/project1/output/network_center20231012_1404/adgen-chatglm2-6b-32k-pt-128-1e-2/checkpoint-450
+Loading checkpoint shards:   0%|          | 0/7 [00:00<?, ?it/s]Loading checkpoint shards:  14%|█▍        | 1/7 [00:01<00:09,  1.58s/it]Loading checkpoint shards:  29%|██▊       | 2/7 [00:03<00:08,  1.74s/it]Loading checkpoint shards:  43%|████▎     | 3/7 [00:05<00:06,  1.70s/it]Loading checkpoint shards:  57%|█████▋    | 4/7 [00:06<00:04,  1.64s/it]Loading checkpoint shards:  71%|███████▏  | 5/7 [00:08<00:03,  1.63s/it]Loading checkpoint shards:  86%|████████▌ | 6/7 [00:09<00:01,  1.64s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.43s/it]Loading checkpoint shards: 100%|██████████| 7/7 [00:10<00:00,  1.56s/it]
+Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/xf2022/pretrained_model/chatglm2-6b-32k and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Running on local URL:  http://127.0.0.1:7860
+
+To create a public link, set `share=True` in `launch()`.

@@ -1,0 +1,1 @@
+nohup python -u predict.py >>./log/predict.log 2>&1 & echo $(date +%Y%m%d_%H:%M:%S) $! >> ./log/pidfile.txt

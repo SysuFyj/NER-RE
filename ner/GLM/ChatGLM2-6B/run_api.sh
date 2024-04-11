@@ -1,0 +1,1 @@
+nohup python -u api.py >>./log/run_api.log 2>&1 & echo $(date +%Y%m%d_%H:%M:%S) $! >> ./log/pidfile.txt
