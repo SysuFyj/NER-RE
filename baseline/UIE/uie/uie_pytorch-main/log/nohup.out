@@ -1,0 +1,53 @@
+2024-04-09 14:39:47.570740: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Training: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/11292 [31m?batch/s[39m eta [36m?[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/11292 [31m?batch/s, loss=unknown[39m eta [36m?[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/modeling_utils.py:811: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  "The `device` argument is deprecated and will be removed in v5 of Transformers.", FutureWarning
+
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/11292 [31m?batch/s, loss=0.00011[39m eta [36m?[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m1/11292 [31m14.77s/batch, loss=0.00011[39m eta [36m46:20:07[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m1/11292 [31m14.77s/batch, loss=0.01234[39m eta [36m46:20:07[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m2/11292 [31m14.31s/batch, loss=0.01234[39m eta [36m44:51:56[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m2/11292 [31m14.31s/batch, loss=0.00829[39m eta [36m44:51:56[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m3/11292 [31m14.25s/batch, loss=0.00829[39m eta [36m44:40:17[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m3/11292 [31m14.25s/batch, loss=0.00623[39m eta [36m44:40:17[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m4/11292 [31m14.11s/batch, loss=0.00623[39m eta [36m44:13:42[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m4/11292 [31m14.11s/batch, loss=0.00499[39m eta [36m44:13:42[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m5/11292 [31m13.95s/batch, loss=0.00499[39m eta [36m43:43:58[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m5/11292 [31m13.95s/batch, loss=0.00416[39m eta [36m43:43:58[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m6/11292 [31m13.99s/batch, loss=0.00416[39m eta [36m43:50:39[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m6/11292 [31m13.99s/batch, loss=0.00557[39m eta [36m43:50:39[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m7/11292 [31m13.76s/batch, loss=0.00557[39m eta [36m43:07:50[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m7/11292 [31m13.76s/batch, loss=0.00947[39m eta [36m43:07:50[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m8/11292 [31m13.66s/batch, loss=0.00947[39m eta [36m42:49:18[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m8/11292 [31m13.66s/batch, loss=0.00843[39m eta [36m42:49:18[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m9/11292 [31m13.80s/batch, loss=0.00843[39m eta [36m43:15:30[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m9/11292 [31m13.80s/batch, loss=0.00786[39m eta [36m43:15:30[39m[A                                               
+                                                                                  [A[32m[2024-04-09 14:42:13,037] [    INFO][0m - global step 10, epoch: 1, loss: 0.00786, speed: 0.07 step/s[0m
+Training: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m9/11292 [31m13.80s/batch, loss=0.00786[39m eta [36m43:15:30[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m10/11292 [31m14.07s/batch, loss=0.00786[39m eta [36m44:05:54[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m10/11292 [31m14.07s/batch, loss=0.00718[39m eta [36m44:05:54[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m11/11292 [31m14.12s/batch, loss=0.00718[39m eta [36m44:14:17[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m11/11292 [31m14.12s/batch, loss=0.00659[39m eta [36m44:14:17[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m12/11292 [31m14.44s/batch, loss=0.00659[39m eta [36m45:14:30[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m12/11292 [31m14.44s/batch, loss=0.00634[39m eta [36m45:14:30[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m13/11292 [31m14.71s/batch, loss=0.00634[39m eta [36m46:05:31[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m13/11292 [31m14.71s/batch, loss=0.00607[39m eta [36m46:05:31[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m14/11292 [31m15.11s/batch, loss=0.00607[39m eta [36m47:19:15[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m14/11292 [31m15.11s/batch, loss=0.00567[39m eta [36m47:19:15[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m15/11292 [31m15.13s/batch, loss=0.00567[39m eta [36m47:22:55[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m15/11292 [31m15.13s/batch, loss=0.00589[39m eta [36m47:22:55[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m16/11292 [31m15.27s/batch, loss=0.00589[39m eta [36m47:49:41[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m16/11292 [31m15.27s/batch, loss=0.00560[39m eta [36m47:49:41[39m[A
+Training Epoch 1: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m17/11292 [31m15.40s/batch, loss=0.00560[39m eta [36m48:14:38[39m[ATraining: [32m  0%[39m [34m░░░░░░░░░░[39m  [32m0/100 [31m?epoch/s[39m eta [36m?[39m
+                                                                                   [A                                               Traceback (most recent call last):
+  File "finetune.py", line 253, in <module>
+    do_train()
+  File "finetune.py", line 109, in do_train
+    optimizer.step()
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 26, in decorate_context
+    return func(*args, **kwargs)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/torch/optim/adamw.py", line 105, in step
+    exp_avg_sq.mul_(beta2).addcmul_(grad, grad, value=1 - beta2)
+KeyboardInterrupt

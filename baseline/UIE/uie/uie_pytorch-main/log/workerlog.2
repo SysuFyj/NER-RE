@@ -1,0 +1,102 @@
+2024-04-09 14:50:17.007368: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'ErnieTokenizer'. 
+The class this function is called from is 'BertTokenizer'.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'ErnieTokenizer'. 
+The class this function is called from is 'BertTokenizerFast'.
+Traceback (most recent call last):
+  File "finetune.py", line 253, in <module>
+    do_train()
+  File "finetune.py", line 36, in do_train
+    model = UIE.from_pretrained(args.model)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/modeling_utils.py", line 2092, in from_pretrained
+    **kwargs,
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/configuration_utils.py", line 538, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/configuration_utils.py", line 565, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/configuration_utils.py", line 632, in _get_config_dict
+    _commit_hash=commit_hash,
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/utils/hub.py", line 381, in cached_file
+    f"{path_or_repo_id} does not appear to have a file named {full_filename}. Checkout "
+OSError: uie-base does not appear to have a file named config.json. Checkout 'https://huggingface.co/uie-base/None' for available files.
+2024-04-09 14:54:11.609883: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'ErnieTokenizer'. 
+The class this function is called from is 'BertTokenizer'.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'ErnieTokenizer'. 
+The class this function is called from is 'BertTokenizerFast'.
+Traceback (most recent call last):
+  File "finetune.py", line 253, in <module>
+    do_train()
+  File "finetune.py", line 36, in do_train
+    model = UIE.from_pretrained(args.model)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/modeling_utils.py", line 2165, in from_pretrained
+    f"Error no file named {WEIGHTS_NAME}, {TF2_WEIGHTS_NAME}, {TF_WEIGHTS_NAME + '.index'} or "
+OSError: Error no file named pytorch_model.bin, tf_model.h5, model.ckpt.index or flax_model.msgpack found in directory uie-base.
+2024-04-09 15:03:41.148322: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'ErnieTokenizer'. 
+The class this function is called from is 'BertTokenizer'.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'ErnieTokenizer'. 
+The class this function is called from is 'BertTokenizerFast'.
+Traceback (most recent call last):
+  File "finetune.py", line 253, in <module>
+    do_train()
+  File "finetune.py", line 36, in do_train
+    model = UIE.from_pretrained(args.model)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/modeling_utils.py", line 2493, in from_pretrained
+    keep_in_fp32_modules=keep_in_fp32_modules,
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/modeling_utils.py", line 2844, in _load_pretrained_model
+    raise RuntimeError(f"Error(s) in loading state_dict for {model.__class__.__name__}:\n\t{error_msg}")
+RuntimeError: Error(s) in loading state_dict for UIE:
+	size mismatch for encoder.embeddings.word_embeddings.weight: copying a param with shape torch.Size([40000, 768]) from checkpoint, the shape in current model is torch.Size([30522, 768]).
+	size mismatch for encoder.embeddings.position_embeddings.weight: copying a param with shape torch.Size([2048, 768]) from checkpoint, the shape in current model is torch.Size([512, 768]).
+	size mismatch for encoder.embeddings.token_type_embeddings.weight: copying a param with shape torch.Size([4, 768]) from checkpoint, the shape in current model is torch.Size([2, 768]).
+	You may consider adding `ignore_mismatched_sizes=True` in the model `from_pretrained` method.
+2024-04-09 15:07:28.288496: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "finetune.py", line 253, in <module>
+    do_train()
+  File "finetune.py", line 35, in do_train
+    tokenizer = BertTokenizerFast.from_pretrained(args.model)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/tokenization_utils_base.py", line 1789, in from_pretrained
+    f"Can't load tokenizer for '{pretrained_model_name_or_path}'. If you were trying to load it from "
+OSError: Can't load tokenizer for 'uie-base_pytorch'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'uie-base_pytorch' is the correct path to a directory containing all relevant files for a BertTokenizerFast tokenizer.
+2024-04-09 15:09:12.096601: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "finetune.py", line 253, in <module>
+    do_train()
+  File "finetune.py", line 35, in do_train
+    tokenizer = BertTokenizerFast.from_pretrained(args.model)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/tokenization_utils_base.py", line 1741, in from_pretrained
+    _commit_hash=commit_hash,
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/transformers/utils/hub.py", line 420, in cached_file
+    local_files_only=local_files_only,
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/huggingface_hub/utils/_validators.py", line 112, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/huggingface_hub/utils/_validators.py", line 167, in validate_repo_id
+    "Repo id must use alphanumeric chars or '-', '_', '.', '--' and '..' are"
+huggingface_hub.utils._validators.HFValidationError: Repo id must use alphanumeric chars or '-', '_', '.', '--' and '..' are forbidden, '-' and '.' cannot start or end the name, max length is 96: './uie-base_pytorch'.
+2024-04-09 15:12:28.253404: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+Traceback (most recent call last):
+  File "finetune.py", line 253, in <module>
+    do_train()
+  File "finetune.py", line 38, in do_train
+    model = model.cuda()
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/torch/nn/modules/module.py", line 463, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/torch/nn/modules/module.py", line 359, in _apply
+    module._apply(fn)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/torch/nn/modules/module.py", line 381, in _apply
+    param_applied = fn(param)
+  File "/data1/fyj2023/anaconda3/envs/eccnlp/lib/python3.7/site-packages/torch/nn/modules/module.py", line 463, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+RuntimeError: CUDA error: out of memory
